@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "671986716133",
+    "project_id": "studysinc-96c07",
+    "storage_bucket": "studysinc-96c07.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:671986716133:android:3074b65930b77c2d4bb30c",
+        "android_client_info": {
+          "package_name": "com.prokreatives.studysync"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFlnQsfspwil5Hldz3FjCiTaHqkRvou8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:671986716133:android:3074b65930b77c2d4bb30c",
+        "android_client_info": {
+          "package_name": "com.prokreatives.studysync.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFlnQsfspwil5Hldz3FjCiTaHqkRvou8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

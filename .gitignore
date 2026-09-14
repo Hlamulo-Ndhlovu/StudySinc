@@ -1,0 +1,10 @@
+# Local SDK path and secrets (LiveKit, etc.) — keep out of version control
+local.properties
+keystore.properties
+internal-testers.csv
+*.jks
+*.keystore
+
+# Build outputs
+**/build/
+.gradle/

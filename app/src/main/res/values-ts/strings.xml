@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StudySync</string>
+    <string name="google_sign_in_web_client_missing">Ku nghena hi Google a ku cinciwangi: vekela default_web_client_id eka strings.xml yi va Web client ID ya Firebase.</string>
+    <string name="google_sign_in_no_id_token">Google a yi vuyisanga token ya ku nghena. Kambela swiyimiso swa phurojeke ya Firebase ya app ya wena ya Android.</string>
+    <string name="google_sign_in_developer_error">Xihoxo xa ku veka Google Sign-In: tsarisa SHA-1 eka Firebase, pfulela Google tanihi ndlela yo nghena, u tirhisa Web client ID.</string>
+
+    <string name="brand_tagline">Avelana tidokhumente, hlangana eka inthanete, u vulavula — swin’we</string>
+    <string name="drawer_section_main">Nkulu</string>
+
+    <string name="nav_home">Kaya</string>
+    <string name="nav_dashboard">Deshibhodi</string>
+    <string name="nav_community">Vaaki</string>
+    <string name="nav_chats">Mbulavulo</string>
+    <string name="nav_classes">Tiklasi</string>
+    <string name="nav_groups">Mintlawa</string>
+    <string name="nav_profile">Phurofayili</string>
+
+    <string name="nav_drawer_dashboard">Deshibhodi</string>
+    <string name="nav_drawer_groups">Mintlawa</string>
+    <string name="nav_drawer_classes">Tiklasi</string>
+    <string name="nav_drawer_friends">Vanghana</string>
+    <string name="nav_drawer_chats">Mahungu</string>
+    <string name="nav_drawer_settings">Swiyimiso</string>
+    <string name="nav_drawer_progress">Ku ya emahlweni</string>
+    <string name="nav_drawer_app_notifications">Switiviso swa app</string>
+    <string name="nav_drawer_profile">Phurofayili</string>
+
+    <string name="app_notifications_bell_cd">Switiviso swa app</string>
+    <string name="app_notifications_title">Switiviso swa app</string>
+    <string name="app_notifications_hero_title">Tshama u tiva</string>
+    <string name="app_notifications_hero_subtitle">Hlawula leswi StudySync yi nga ku tivisaka swona endzeni ka app. Tirhisa swiyimiso swa xitirhisiwa xa wena swa misindo na tibhenara.</string>
+    <string name="app_notifications_section_in_app">Eka StudySync</string>
+    <string name="app_notifications_toggle_title">Switiviso swa StudySync</string>
+    <string name="app_notifications_toggle_subtitle">Tiklasi letintshwa, swikombelo swa vanghana, swihundzuluxo leswi aveleriweke, na swikhumbuxi</string>
+    <string name="app_notifications_section_device">Eka xitirhisiwa lexi</string>
+    <string name="app_notifications_device_explainer">Android yi nga ha sivela switiviso loko swi pfariwile eka StudySync. Pfulela swiyimiso swa sisiteme ku pfumelela tibhenara na misindo.</string>
+    <string name="app_notifications_request_permission">Pfumelela mpfumelelo wa switiviso (Android 13+)</string>
+    <string name="app_notifications_open_system_settings">Pfulela swiyimiso swa switiviso swa sisiteme</string>
+    <string name="settings_app_notifications_hint">Yi pfulela ntsena minhlawulo ya switiviso (a hi swiyimiso hinkwaswo).</string>
+
+    <string name="dashboard_greeting">Avuxeni, %1$s 👋</string>
+    <string name="dashboard_subtitle">Ntsindza wa wena wa tidokhumente, tinhlengeletano ta live, na mbulavulo.</string>
+    <string name="dashboard_pulse">%1$d vanghana eka inthanete · %2$d mintlawa leyi tirhaka</string>
+    <string name="dashboard_sign_out">Huma</string>
+    <string name="dashboard_menu">Menyu</string>
+    <string name="dashboard_loading">Hi nghenisa ntsindza wa wena…</string>
+    <string name="dashboard_section_overview">Ku vona hinkwaswo</string>
+    <string name="dashboard_section_schedule">Xedulu</string>
+
+    <string name="section_quick_actions">Swiendlo swa xihatla</string>
+    <string name="stat_classes">Tiklasi ta wena</string>
+    <string name="stat_friends">Ku hlanganisiwile</string>
+    <string name="stat_groups">Yi tirha</string>
+    <string name="stat_friends_online">%1$d eka inthanete sweswi</string>
+    <string name="stat_groups_active">%1$d leyi tirhaka</string>
+    <string name="section_spotlight">Mintlawa leyi tirhaka</string>
+    <string name="section_recent_messages">Mahungu ya sweswi</string>
+    <string name="section_recent_activity">Ntirho wa sweswi</string>
+    <string name="dashboard_view_all">Vona hinkwaswo</string>
+    <string name="quick_new_session">Nhlengeletano ya live</string>
+    <string name="quick_join_group">Nghena eka ntlawa</string>
+    <string name="quick_flashcards">Tifayili eka mintlawa</string>
+    <string name="quick_add_note">Mahungu</string>
+    <string name="friends_search_hint">Lava vanhu lava u tirhaka na vona</string>
+    <string name="friends_empty_hint">A ku na vanghana. Tsindzela + ku rhamba munhu hi imeyili.</string>
+
+    <string name="auth_hero_subtitle">Nghena ku avelana tifayili, u nghena eka tinhlengeletano ta live, u rhumela mahungu eka mintlawa ya wena.</string>
+    <string name="auth_acceptable_use_notice">Ku dyondza na ku tirhisana ntsena. Ku tshama nakedi na swilo swa masangu a swi pfumeleriwi.</string>
+
+    <string name="settings_community_standards_title">Milawu ya vaaki</string>
+    <string name="settings_community_standards_body">StudySync i ya ku dyondza na ku tirha swin’we. U nga avelani, u nga kombeli, kumbe u lava swifaniso kumbe video ya masangu eka mahungu, tifayili, tikholo ta video, kumbe phurofayili ya wena. Hi nga susa swilo na ku yimisa tiakhawunti leti tlulaka milawu leyi.</string>
+    <string name="classes_hero_subtitle">Hlela tinhlengeletano, nghena live, u hlayisa tinoutse na switirhisiwa eka ndhawu yin’we.</string>
+    <string name="classes_hint_has_items">Pfulela kilasi ku vona vuxokoxoko, video ya live, na tifayili leti aveleriweke. U nga yi cinca eka xikirini xa vuxokoxoko.</string>
+    <string name="classes_hint_empty">Tumbuluxa kilasi hi + ku engetela tinhlengeletano, swihlanganisi, na tidokhumente.</string>
+    <string name="dashboard_empty_activity">A ku na ntirho wa sweswi. Pfulela ntlawa ku avelana tifayili na ku vulavula, kumbe sungula kilasi ya tinhlengeletano ta live.</string>
+    <string name="chats_hero_subtitle">Rhumela mahungu eka mintlawa ya wena u landzelela swihundzuluxo leswi aveleriweke.</string>
+    <string name="groups_hero_title">Mintlawa</string>
+    <string name="groups_hero_subtitle">Tumbuluxa ndhawu yo vulavula na ku avelana tidokhumente — kutani u pfulela Mahungu ku vulavula.</string>
+    <string name="groups_dialog_new_title">Ntlawa lowuntshwa</string>
+    <string name="groups_empty_hint">A ku na mintlawa. Tsindzela + ku tumbuluxa ndhawu ya tifayili na mbulavulo.</string>
+    <string name="profile_default_display_name">Xirho xa StudySync</string>
+    <string name="profile_account_id_label">ID ya akhawunti: %1$s</string>
+    <string name="profile_default_bio">Ndzi laha ku avelana tifayili, ku hlangana eka inthanete, na ku tshama ndzi hlanganile na mintlawa ya mina.</string>
+    <string name="profile_sample_post_body">Avelana swihundzuluxo, tifayili, na tinoutse ta tinhlengeletano na mintlawa ya wena. Swin’wana swa ta.</string>
+
+    <string name="privacy_policy">Pholisi ya xihundla</string>
+    <string name="settings_report_safety_title">Vika xiphiqo xa nsirhelelo</string>
+    <string name="settings_report_safety_cta">Tsala imeyili</string>
+    <string name="settings_report_safety_subtitle">Hi rhumela imeyili hi tlhelo ra ku xanisiwa, swilo leswi nga fanelaka, kumbe ku tlula milawu. Vula leswi endlekeke na laha (xikombiso vito ra ntlawa kumbe kilasi).</string>
+    <string name="settings_report_email_body">Hlamusela leswi endlekeke na laha u swi vonaka kona (ntlawa, kilasi, mbulavulo, kumbe phurofayili). Hi ta kambela hi xihatla.\n\n(App ya poso ya wena yi nga namarheta adirese ya wena hi yexe.)</string>
+    <string name="settings_report_no_email_app">A ku na app ya imeyili. Rhumela hungu eka adirese leyi kombisiweke eka Pholisi ya xihundla.</string>
+
+    <string name="notification_channel_classes_name">Tiklasi</string>
+    <string name="notification_channel_classes_description">Tiklasi, tinhlengeletano, na swihundzuluxo swa xedulu</string>
+    <string name="notification_channel_general_name">Swo tala</string>
+    <string name="notification_channel_general_description">Swikhumbuxi na swihundzuluxo swa StudySync</string>
+    <string name="notification_channel_friends_name">Vanghana</string>
+    <string name="notification_channel_friends_description">Loko munhu a ku engetela tanihi munghana</string>
+    <string name="notification_class_created_title">Kilasi yi tumbuluxiwe</string>
+    <string name="notification_class_created_body">“%1$s” yi lungile. Tsindzela ku pfulela.</string>
+    <string name="class_created_snackbar">Kilasi yi tumbuluxiwe: %1$s</string>
+    <string name="notification_friend_added_title">Munghana luntshwa</string>
+    <string name="notification_friend_added_body">%1$s u ku engeterile eka StudySync. Tsindzela ku pfulela Vanghana.</string>
+
+    <string name="action_back">Thlelela</string>
+    <string name="settings_title">Swiyimiso</string>
+    <string name="settings_hero_title">Minhlawulo ya wena</string>
+    <string name="settings_hero_subtitle">Xihloko, ririmi, milawu ya vaaki, na akhawunti. Ku lawula switiviso i ehansi ka Switiviso swa app.</string>
+    <string name="settings_section_preferences">Minhlawulo</string>
+    <string name="settings_dark_mode">Moudi wo ntima</string>
+    <string name="settings_dark_mode_subtitle">Tirhisa voneka byo ntima eka app hinkwayo</string>
+    <string name="settings_section_language">Ririmi</string>
+    <string name="settings_language_subtitle">StudySync yi fanele ku va na ririmi rin’we eka ntsongo. Hlawula Xinghezi, Afrikaans, Sepedi, isiZulu, kumbe Xitsonga.</string>
+    <string name="settings_section_legal">Nawu</string>
+    <string name="settings_section_account">Akhawunti</string>
+    <string name="settings_sign_out">Huma</string>
+
+    <string name="gamification_title">Ku ya emahlweni</string>
+    <string name="gamification_hero_subtitle">Kuma XP hi ku tumbuluxa tiklasi, ku nghena mintlawa, ku engetela vanghana, ku avelana tifayili, na ku pfulela StudySync siku rin’wana na rin’wana.</string>
+    <string name="gamification_level">Xiyimo %1$d</string>
+    <string name="gamification_xp_label">%1$d XP</string>
+    <string name="gamification_xp_progress">%1$d / %2$d XP ku fika eka xiyimo lexi landzelaka</string>
+    <string name="gamification_streak_days">Masiku ya %1$d ya ku ya emahlweni</string>
+    <string name="gamification_badges">Tibheji</string>
+    <string name="gamification_dashboard_cta">Tsindzela ku vona tibheji, masiku ya ku ya emahlweni, na xiyimo</string>
+
+    <string name="badge_welcome_title">U amukeriwile</string>
+    <string name="badge_welcome_desc">U nghenile u sungula ku tirhisa StudySync.</string>
+    <string name="badge_first_class_title">Kilasi yo sungula</string>
+    <string name="badge_first_class_desc">Tumbuluxa kumbe nghena eka kilasi ya wena yo sungula.</string>
+    <string name="badge_first_group_title">Mutirhi wa ntlawa</string>
+    <string name="badge_first_group_desc">Tumbuluxa kumbe nghena eka ntlawa wa dyondzo.</string>
+    <string name="badge_connector_title">Muhlanganisi</string>
+    <string name="badge_connector_desc">Engetela vanghana vanharhu eka ntsongo.</string>
+    <string name="badge_scholar_title">Mudyondzi</string>
+    <string name="badge_scholar_desc">Va na tiklasi ta ntlhanu eka xedulu ya wena.</string>
+    <string name="badge_streak3_title">U ya emahlweni</string>
+    <string name="badge_streak3_desc">Pfulela StudySync masiku manharhu lama landzelelaka.</string>
+    <string name="badge_streak7_title">Ntsumi wa vhiki</string>
+    <string name="badge_streak7_desc">Hlayisa masiku ya nkombo ya ku ya emahlweni.</string>
+</resources>

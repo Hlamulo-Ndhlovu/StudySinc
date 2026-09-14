@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StudySync</string>
+    <!-- Firebase Console → Project settings → Your apps → Android: add SHA-1. Then Authentication → Sign-in method → Google → Web client ID (OAuth 2.0 client type "Web application", NOT the Android client id). Paste it here. -->
+    <string name="default_web_client_id" translatable="false">REPLACE_WITH_FIREBASE_WEB_CLIENT_ID</string>
+    <string name="google_sign_in_web_client_missing">Google Sign-In isn’t configured: set default_web_client_id in strings.xml to your Firebase Web client ID (Authentication → Google → Web client ID).</string>
+    <string name="google_sign_in_no_id_token">Google didn’t return a sign-in token. Usually the Web client ID in the app doesn’t match Firebase, or SHA-1 isn’t registered for this build. Check Firebase Console → Project settings → your Android app.</string>
+    <string name="google_sign_in_developer_error">Google Sign-In setup error: register your debug/release SHA-1 fingerprint in Firebase Console (Project settings → Your apps), enable Google as a sign-in provider, and use the Web client ID in default_web_client_id.</string>
+
+    <string name="brand_tagline">Share documents, meet online, and chat — together</string>
+    <string name="drawer_section_main">Main</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_community">Community</string>
+    <string name="nav_chats">Chats</string>
+    <string name="nav_classes">Classes</string>
+    <string name="nav_groups">Groups</string>
+    <string name="nav_profile">Profile</string>
+
+    <string name="nav_drawer_dashboard">Dashboard</string>
+    <string name="nav_drawer_groups">Groups</string>
+    <string name="nav_drawer_classes">Classes</string>
+    <string name="nav_drawer_friends">Friends</string>
+    <string name="nav_drawer_chats">Messages</string>
+    <string name="nav_drawer_settings">Settings</string>
+    <string name="nav_drawer_progress">Progress</string>
+    <string name="nav_drawer_app_notifications">App notifications</string>
+    <string name="nav_drawer_profile">Profile</string>
+
+    <string name="app_notifications_bell_cd">App notifications</string>
+    <string name="app_notifications_title">App notifications</string>
+    <string name="app_notifications_hero_title">Stay in the loop</string>
+    <string name="app_notifications_hero_subtitle">Choose what StudySync can notify you about inside the app. Use your device settings for sounds and banners.</string>
+    <string name="app_notifications_section_in_app">In StudySync</string>
+    <string name="app_notifications_toggle_title">StudySync alerts</string>
+    <string name="app_notifications_toggle_subtitle">New classes, friend requests, shared updates, and reminders</string>
+    <string name="app_notifications_section_device">On this device</string>
+    <string name="app_notifications_device_explainer">Android may still block alerts if notifications are off for StudySync. You can open system settings to allow banners and sound.</string>
+    <string name="app_notifications_request_permission">Allow notification permission (Android 13+)</string>
+    <string name="app_notifications_open_system_settings">Open system notification settings</string>
+    <string name="settings_app_notifications_hint">Opens notification preferences only (not full settings).</string>
+
+    <string name="dashboard_greeting">Hey, %1$s 👋</string>
+    <string name="dashboard_subtitle">Your hub for documents, live meetings, and conversations.</string>
+    <string name="dashboard_pulse">%1$d friends online · %2$d active groups</string>
+    <string name="dashboard_sign_out">Sign out</string>
+    <string name="dashboard_menu">Menu</string>
+    <string name="dashboard_loading">Loading your hub…</string>
+    <string name="dashboard_section_overview">Overview</string>
+    <string name="dashboard_section_schedule">Schedule</string>
+
+    <string name="section_quick_actions">Quick actions</string>
+    <string name="stat_classes">Your classes</string>
+    <string name="stat_friends">Connected</string>
+    <string name="stat_groups">Active</string>
+    <string name="stat_friends_online">%1$d online now</string>
+    <string name="stat_groups_active">%1$d active</string>
+    <string name="section_spotlight">Active groups</string>
+    <string name="section_recent_messages">Recent messages</string>
+    <string name="section_recent_activity">Recent activity</string>
+    <string name="dashboard_view_all">View all</string>
+    <string name="quick_new_session">Live meeting</string>
+    <string name="quick_join_group">Join group</string>
+    <string name="quick_flashcards">Files in groups</string>
+    <string name="quick_add_note">Messages</string>
+    <string name="friends_search_hint">Search people you collaborate with</string>
+    <string name="friends_empty_hint">No contacts yet. Tap + to invite someone by email.</string>
+
+    <string name="auth_hero_subtitle">Sign in to share files, join live meetings, and message your groups.</string>
+    <string name="auth_acceptable_use_notice">For study and collaboration only. Nudity and sexually explicit content are not allowed.</string>
+
+    <string name="settings_community_standards_title">Community standards</string>
+    <string name="settings_community_standards_body">StudySync is for studying and working together. Do not share, request, or solicit nudity, sexually explicit images or video, or other sexual content in messages, files, video calls, or your profile. We may remove content and suspend accounts that break these rules.</string>
+    <string name="classes_hero_subtitle">Schedule sessions, go live, and keep notes and materials in one place.</string>
+    <string name="classes_hint_has_items">Open a class for details, live video, and shared files. You can replace it from the detail screen.</string>
+    <string name="classes_hint_empty">Create a class with + to add meetings, links, and documents.</string>
+    <string name="dashboard_empty_activity">No recent activity yet. Open a group to share files and chat, or start a class for live meetings.</string>
+    <string name="chats_hero_subtitle">Message your groups and follow shared updates.</string>
+    <string name="groups_hero_title">Groups</string>
+    <string name="groups_hero_subtitle">Create a space to chat and share documents — then open Messages to talk.</string>
+    <string name="groups_dialog_new_title">New group</string>
+    <string name="groups_empty_hint">No groups yet. Tap + to create a space for files and chat.</string>
+    <string name="profile_default_display_name">StudySync member</string>
+    <string name="profile_account_id_label">Account ID: %1$s</string>
+    <string name="profile_default_bio">Here to share files, meet online, and stay in touch with my groups.</string>
+    <string name="profile_sample_post_body">Share updates, files, and meeting notes with your groups. More features are on the way.</string>
+
+    <!-- Must be public HTTPS — same URL as Play Console → App content → Privacy policy -->
+    <string name="privacy_policy_url" translatable="false">https://docs.google.com/document/d/e/2PACX-1vQur707vVXkHpojXRbPUpx3Btj5huDO66LAEQH9YprYs6gkMEQUr8YIvulICC_EDF3pOw781iRBiJYf/pub</string>
+    <string name="privacy_policy">Privacy policy</string>
+
+    <string name="support_contact_email" translatable="false">hlamulondhlovu11@gmail.com</string>
+    <string name="settings_report_safety_title">Report a safety concern</string>
+    <string name="settings_report_safety_cta">Compose email</string>
+    <string name="settings_report_safety_subtitle">Email us about harassment, inappropriate content, or other violations. Say what happened and where (for example a group or class name).</string>
+    <string name="settings_report_email_subject" translatable="false">StudySync safety report</string>
+    <string name="settings_report_email_body">Please describe what happened and where you saw it (group, class, chat, or profile). We will review as soon as we can.\n\n(Your mail app may attach your address automatically.)</string>
+    <string name="settings_report_no_email_app">No email app found. Send a message to the address shown in Privacy policy.</string>
+
+    <string name="notification_channel_classes_name">Classes</string>
+    <string name="notification_channel_classes_description">Classes, meetings, and schedule updates</string>
+    <string name="notification_channel_general_name">General</string>
+    <string name="notification_channel_general_description">StudySync reminders and updates</string>
+    <string name="notification_channel_friends_name">Friends</string>
+    <string name="notification_channel_friends_description">When someone adds you as a friend</string>
+    <string name="notification_class_created_title">Class created</string>
+    <string name="notification_class_created_body">“%1$s” is ready. Tap to open.</string>
+    <string name="class_created_snackbar">Class created: %1$s</string>
+    <string name="notification_friend_added_title">New friend</string>
+    <string name="notification_friend_added_body">%1$s added you on StudySync. Tap to open Friends.</string>
+
+    <string name="action_back">Back</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_hero_title">Your preferences</string>
+    <string name="settings_hero_subtitle">Theme, language, community standards, and account. Notification controls are under App notifications.</string>
+    <string name="settings_section_preferences">Preferences</string>
+    <string name="settings_dark_mode">Dark mode</string>
+    <string name="settings_dark_mode_subtitle">Use dark appearance across the app</string>
+    <string name="settings_section_language">Language</string>
+    <string name="settings_language_subtitle">StudySync needs at least one language. Choose English, Afrikaans, Sepedi, isiZulu, or Xitsonga.</string>
+    <string name="settings_section_legal">Legal</string>
+    <string name="settings_section_account">Account</string>
+    <string name="settings_sign_out">Sign out</string>
+
+    <string name="gamification_title">Progress</string>
+    <string name="gamification_hero_subtitle">Earn XP by creating classes, joining groups, adding friends, sharing files, and opening StudySync each day.</string>
+    <string name="gamification_level">Level %1$d</string>
+    <string name="gamification_xp_label">%1$d XP</string>
+    <string name="gamification_xp_progress">%1$d / %2$d XP to the next level</string>
+    <string name="gamification_streak_days">%1$d-day streak</string>
+    <string name="gamification_badges">Badges</string>
+    <string name="gamification_dashboard_cta">Tap to view badges, streak, and level</string>
+
+    <string name="badge_welcome_title">Welcome</string>
+    <string name="badge_welcome_desc">You signed in and started using StudySync.</string>
+    <string name="badge_first_class_title">First class</string>
+    <string name="badge_first_class_desc">Create or join your first class.</string>
+    <string name="badge_first_group_title">Team player</string>
+    <string name="badge_first_group_desc">Create or join a study group.</string>
+    <string name="badge_connector_title">Connector</string>
+    <string name="badge_connector_desc">Add at least three friends.</string>
+    <string name="badge_scholar_title">Scholar</string>
+    <string name="badge_scholar_desc">Have five classes on your schedule.</string>
+    <string name="badge_streak3_title">On a roll</string>
+    <string name="badge_streak3_desc">Open StudySync three days in a row.</string>
+    <string name="badge_streak7_title">Week warrior</string>
+    <string name="badge_streak7_desc">Keep a seven-day streak.</string>
+</resources>

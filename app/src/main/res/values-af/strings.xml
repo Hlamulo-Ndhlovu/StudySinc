@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StudySync</string>
+    <string name="google_sign_in_web_client_missing">Google-aanmelding is nie opgestel nie: sit default_web_client_id in strings.xml na jou Firebase Web-kliënt-ID.</string>
+    <string name="google_sign_in_no_id_token">Google het nie ’n aanmeldingsteken teruggestuur nie. Kontroleer Firebase-projekinstellings vir jou Android-toepassing.</string>
+    <string name="google_sign_in_developer_error">Google-aanmelding-opstellingfout: registreer jou SHA-1 in Firebase, skakel Google-aanmelding aan, en gebruik die Web-kliënt-ID.</string>
+
+    <string name="brand_tagline">Deel dokumente, ontmoet aanlyn, en gesels — saam</string>
+    <string name="drawer_section_main">Hoof</string>
+
+    <string name="nav_home">Tuis</string>
+    <string name="nav_dashboard">Kontroleskerm</string>
+    <string name="nav_community">Gemeenskap</string>
+    <string name="nav_chats">Gesprekke</string>
+    <string name="nav_classes">Klasse</string>
+    <string name="nav_groups">Groepe</string>
+    <string name="nav_profile">Profiel</string>
+
+    <string name="nav_drawer_dashboard">Kontroleskerm</string>
+    <string name="nav_drawer_groups">Groepe</string>
+    <string name="nav_drawer_classes">Klasse</string>
+    <string name="nav_drawer_friends">Vriende</string>
+    <string name="nav_drawer_chats">Boodskappe</string>
+    <string name="nav_drawer_settings">Instellings</string>
+    <string name="nav_drawer_progress">Vordering</string>
+    <string name="nav_drawer_app_notifications">Toepkennisgewings</string>
+    <string name="nav_drawer_profile">Profiel</string>
+
+    <string name="app_notifications_bell_cd">Toepkennisgewings</string>
+    <string name="app_notifications_title">Toepkennisgewings</string>
+    <string name="app_notifications_hero_title">Bly op hoogte</string>
+    <string name="app_notifications_hero_subtitle">Kies waaroor StudySync jou in die toepassing kan inlig. Gebruik jou toestelinstellings vir klanke en banierkennisgewings.</string>
+    <string name="app_notifications_section_in_app">In StudySync</string>
+    <string name="app_notifications_toggle_title">StudySync-waarskuwings</string>
+    <string name="app_notifications_toggle_subtitle">Nuwe klasse, vriendversoeke, gedeelde opdaterings en herinneringe</string>
+    <string name="app_notifications_section_device">Op hierdie toestel</string>
+    <string name="app_notifications_device_explainer">Android kan steeds waarskuwings blokkeer as kennisgewings vir StudySync af is. Maak stelselinstellings oop om baniere en klank toe te laat.</string>
+    <string name="app_notifications_request_permission">Laat kennisgewingtoestemming toe (Android 13+)</string>
+    <string name="app_notifications_open_system_settings">Maak stelselkennisgewinginstellings oop</string>
+    <string name="settings_app_notifications_hint">Maak slegs kennisgewingvoorkeure oop (nie volle instellings nie).</string>
+
+    <string name="dashboard_greeting">Hallo, %1$s 👋</string>
+    <string name="dashboard_subtitle">Jou spilpunt vir dokumente, lewendige vergaderings en gesprekke.</string>
+    <string name="dashboard_pulse">%1$d vriende aanlyn · %2$d aktiewe groepe</string>
+    <string name="dashboard_sign_out">Teken uit</string>
+    <string name="dashboard_menu">Kieslys</string>
+    <string name="dashboard_loading">Jou spilpunt word gelaai…</string>
+    <string name="dashboard_section_overview">Oorsig</string>
+    <string name="dashboard_section_schedule">Rooster</string>
+
+    <string name="section_quick_actions">Vinnige aksies</string>
+    <string name="stat_classes">Jou klasse</string>
+    <string name="stat_friends">Gekoppel</string>
+    <string name="stat_groups">Aktief</string>
+    <string name="stat_friends_online">%1$d nou aanlyn</string>
+    <string name="stat_groups_active">%1$d aktief</string>
+    <string name="section_spotlight">Aktiewe groepe</string>
+    <string name="section_recent_messages">Onlangse boodskappe</string>
+    <string name="section_recent_activity">Onlangse aktiwiteit</string>
+    <string name="dashboard_view_all">Sien alles</string>
+    <string name="quick_new_session">Lewendige vergadering</string>
+    <string name="quick_join_group">Sluit by groep aan</string>
+    <string name="quick_flashcards">Lêers in groepe</string>
+    <string name="quick_add_note">Boodskappe</string>
+    <string name="friends_search_hint">Soek mense saam met wie jy werk</string>
+    <string name="friends_empty_hint">Nog geen kontakte nie. Tik + om iemand per e-pos uit te nooi.</string>
+
+    <string name="auth_hero_subtitle">Teken in om lêers te deel, by lewendige vergaderings aan te sluit, en jou groepe te boodskap.</string>
+    <string name="auth_acceptable_use_notice">Slegs vir studie en samewerking. Naaktheid en seksueel eksplisiete inhoud is nie toelaatbaar nie.</string>
+
+    <string name="settings_community_standards_title">Gemeenskapstandaarde</string>
+    <string name="settings_community_standards_body">StudySync is vir studeer en saamwerk. Moenie naaktheid, seksueel eksplisiete beelde of video, of ander seksuele inhoud in boodskappe, lêers, video-oproepe of jou profiel deel, vra of werf nie. Ons kan inhoud verwyder en rekeninge opskort wat hierdie reëls oortree.</string>
+    <string name="classes_hero_subtitle">Skeduleer sessies, gaan lewendig, en hou notas en materiaal op een plek.</string>
+    <string name="classes_hint_has_items">Maak ’n klas oop vir besonderhede, lewendige video en gedeelde lêers. Jy kan dit vanaf die besonderhedeskerm vervang.</string>
+    <string name="classes_hint_empty">Skep ’n klas met + om vergaderings, skakels en dokumente by te voeg.</string>
+    <string name="dashboard_empty_activity">Nog geen onlangse aktiwiteit nie. Maak ’n groep oop om lêers te deel en te gesels, of begin ’n klas vir lewendige vergaderings.</string>
+    <string name="chats_hero_subtitle">Boodskap jou groepe en volg gedeelde opdaterings.</string>
+    <string name="groups_hero_title">Groepe</string>
+    <string name="groups_hero_subtitle">Skep ’n spasie om te gesels en dokumente te deel — maak dan Boodskappe oop om te praat.</string>
+    <string name="groups_dialog_new_title">Nuwe groep</string>
+    <string name="groups_empty_hint">Nog geen groepe nie. Tik + om ’n spasie vir lêers en klets te skep.</string>
+    <string name="profile_default_display_name">StudySync-lid</string>
+    <string name="profile_account_id_label">Rekening-ID: %1$s</string>
+    <string name="profile_default_bio">Hier om lêers te deel, aanlyn te ontmoet, en in voeling te bly met my groepe.</string>
+    <string name="profile_sample_post_body">Deel opdaterings, lêers en vergaderingnotas met jou groepe. Meer kenmerke is onderweg.</string>
+
+    <string name="privacy_policy">Privaatheidsbeleid</string>
+    <string name="settings_report_safety_title">Rapporteer ’n veiligheidskwessie</string>
+    <string name="settings_report_safety_cta">Stel e-pos op</string>
+    <string name="settings_report_safety_subtitle">E-pos ons oor teistering, ontoepaslike inhoud of ander oortredings. Sê wat gebeur het en waar (byvoorbeeld ’n groep- of klasnaam).</string>
+    <string name="settings_report_email_body">Beskryf asseblief wat gebeur het en waar jy dit gesien het (groep, klas, klets of profiel). Ons sal so gou moontlik hersien.\n\n(Jou pos-toepassing mag jou adres outomaties aanheg.)</string>
+    <string name="settings_report_no_email_app">Geen e-pos-toepassing gevind nie. Stuur ’n boodskap na die adres in Privaatheidsbeleid.</string>
+
+    <string name="notification_channel_classes_name">Klasse</string>
+    <string name="notification_channel_classes_description">Klasse, vergaderings en roosteropdaterings</string>
+    <string name="notification_channel_general_name">Algemeen</string>
+    <string name="notification_channel_general_description">StudySync-herinneringe en opdaterings</string>
+    <string name="notification_channel_friends_name">Vriende</string>
+    <string name="notification_channel_friends_description">Wanneer iemand jou as vriend byvoeg</string>
+    <string name="notification_class_created_title">Klas geskep</string>
+    <string name="notification_class_created_body">“%1$s” is gereed. Tik om oop te maak.</string>
+    <string name="class_created_snackbar">Klas geskep: %1$s</string>
+    <string name="notification_friend_added_title">Nuwe vriend</string>
+    <string name="notification_friend_added_body">%1$s het jou op StudySync bygevoeg. Tik om Vriende oop te maak.</string>
+
+    <string name="action_back">Terug</string>
+    <string name="settings_title">Instellings</string>
+    <string name="settings_hero_title">Jou voorkeure</string>
+    <string name="settings_hero_subtitle">Tema, taal, gemeenskapstandaarde en rekening. Kennisgewingkontroles is onder Toepkennisgewings.</string>
+    <string name="settings_section_preferences">Voorkeure</string>
+    <string name="settings_dark_mode">Donker modus</string>
+    <string name="settings_dark_mode_subtitle">Gebruik donker voorkoms dwarsdeur die toepassing</string>
+    <string name="settings_section_language">Taal</string>
+    <string name="settings_language_subtitle">StudySync moet ten minste een taal hê. Kies Engels, Afrikaans, Sepedi, isiZulu of Xitsonga.</string>
+    <string name="settings_section_legal">Regsaspekte</string>
+    <string name="settings_section_account">Rekening</string>
+    <string name="settings_sign_out">Teken uit</string>
+
+    <string name="gamification_title">Vordering</string>
+    <string name="gamification_hero_subtitle">Verdien XP deur klasse te skep, by groepe aan te sluit, vriende by te voeg, lêers te deel, en StudySync elke dag oop te maak.</string>
+    <string name="gamification_level">Vlak %1$d</string>
+    <string name="gamification_xp_label">%1$d XP</string>
+    <string name="gamification_xp_progress">%1$d / %2$d XP tot die volgende vlak</string>
+    <string name="gamification_streak_days">%1$d-dag-reeks</string>
+    <string name="gamification_badges">Kentekens</string>
+    <string name="gamification_dashboard_cta">Tik om kentekens, reeks en vlak te sien</string>
+
+    <string name="badge_welcome_title">Welkom</string>
+    <string name="badge_welcome_desc">Jy het ingeteken en begin StudySync gebruik.</string>
+    <string name="badge_first_class_title">Eerste klas</string>
+    <string name="badge_first_class_desc">Skep of sluit by jou eerste klas aan.</string>
+    <string name="badge_first_group_title">Spanspeler</string>
+    <string name="badge_first_group_desc">Skep of sluit by ’n studiegroep aan.</string>
+    <string name="badge_connector_title">Verbinder</string>
+    <string name="badge_connector_desc">Voeg ten minste drie vriende by.</string>
+    <string name="badge_scholar_title">Geleerde</string>
+    <string name="badge_scholar_desc">Hê vyf klasse op jou rooster.</string>
+    <string name="badge_streak3_title">Op dreef</string>
+    <string name="badge_streak3_desc">Maak StudySync drie dae agtereenvolgens oop.</string>
+    <string name="badge_streak7_title">Weekvegter</string>
+    <string name="badge_streak7_desc">Hou ’n sewe-dag-reeks.</string>
+</resources>

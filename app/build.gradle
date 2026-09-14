@@ -1,0 +1,210 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withInputStream { localProperties.load(it) }
+}
+def livekitUrl = localProperties.getProperty('LIVEKIT_URL', '')
+def livekitToken = localProperties.getProperty('LIVEKIT_TOKEN', '')
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('keystore.properties')
+/** Set when keystore.properties exists and signing secrets resolve (file and/or env). */
+def releaseSigningStoreFile = null
+def releaseSigningStorePassword = null
+def releaseSigningKeyAlias = null
+def releaseSigningKeyPassword = null
+/** True when keystore.properties has path+alias but passwords are missing (sync still works; release build fails with a clear message). */
+def releaseKeystoreAwaitingSecrets = false
+
+if (keystorePropertiesFile.exists()) {
+    keystorePropertiesFile.withInputStream { keystoreProperties.load(it) }
+    def storePath = keystoreProperties.getProperty('storeFile')?.trim()
+    if (storePath == null || storePath.isEmpty()) {
+        throw new GradleException(
+            "keystore.properties: set storeFile= to your .jks path (relative to project root or absolute, use forward slashes). See keystore.properties.example"
+        )
+    }
+    def storeFileCandidate = rootProject.file(storePath)
+    if (!storeFileCandidate.exists()) {
+        throw new GradleException(
+            "Keystore file not found: ${storeFileCandidate.absolutePath}\n" +
+                "Fix storeFile= in keystore.properties (paths are relative to: ${rootProject.projectDir})"
+        )
+    }
+    def keyAlias = keystoreProperties.getProperty('keyAlias')?.trim()
+    if (keyAlias == null || keyAlias.isEmpty()) {
+        throw new GradleException("keystore.properties: set keyAlias= (see keystore.properties.example)")
+    }
+    def storePass = keystoreProperties.getProperty('storePassword')?.trim()
+    if (storePass == null || storePass.isEmpty()) {
+        storePass = System.getenv('STUDYSYNC_STORE_PASSWORD')?.trim()
+    }
+    def keyPass = keystoreProperties.getProperty('keyPassword')?.trim()
+    if (keyPass == null || keyPass.isEmpty()) {
+        keyPass = System.getenv('STUDYSYNC_KEY_PASSWORD')?.trim()
+    }
+    if (keyPass == null || keyPass.isEmpty()) {
+        keyPass = storePass
+    }
+    if (storePass == null || storePass.isEmpty()) {
+        releaseKeystoreAwaitingSecrets = true
+    } else {
+        releaseSigningStoreFile = storeFileCandidate
+        releaseSigningKeyAlias = keyAlias
+        releaseSigningStorePassword = storePass
+        releaseSigningKeyPassword = keyPass
+    }
+}
+
+tasks.configureEach { task ->
+    if (task.name == 'bundleRelease' || task.name == 'assembleRelease') {
+        task.doFirst {
+            if (releaseKeystoreAwaitingSecrets) {
+                throw new GradleException(
+                      "Release signing: add storePassword= (and keyPassword= if needed) to keystore.properties, " +
+                        "or set env STUDYSYNC_STORE_PASSWORD (and STUDYSYNC_KEY_PASSWORD if different). " +
+                        "Then rebuild. See keystore.properties.example"
+                )
+            }
+        }
+    }
+}
+
+android {
+    namespace 'com.studysync'
+    compileSdk 35
+
+    defaultConfig {
+        // New id for a clean Play listing (com.studysync still tied to old keys on Google’s side).
+        applicationId "com.prokreatives.studysync"
+        minSdk 26
+        targetSdk 35
+        versionCode 13
+        versionName "1.0.12"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // LiveKit: set LIVEKIT_URL and LIVEKIT_TOKEN in project-root local.properties (see local.properties.example).
+        buildConfigField "String", "LIVEKIT_URL", "\"${livekitUrl.replace('\\', '\\\\').replace('\"', '\\\"')}\""
+        buildConfigField "String", "LIVEKIT_TOKEN", "\"${livekitToken.replace('\\', '\\\\').replace('\"', '\\\"')}\""
+    }
+
+    signingConfigs {
+        release {
+            if (releaseSigningStoreFile != null) {
+                storeFile releaseSigningStoreFile
+                storePassword releaseSigningStorePassword
+                keyAlias releaseSigningKeyAlias
+                keyPassword releaseSigningKeyPassword
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles(
+                    getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+            )
+            if (releaseSigningStoreFile != null) {
+                signingConfig signingConfigs.release
+            }
+        }
+        debug {
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+        }
+    }
+
+    buildFeatures {
+        compose true
+        buildConfig true
+    }
+
+    composeOptions {
+        // Must match Kotlin: https://developer.android.com/jetpack/androidx/releases/compose-compiler (1.9.24 → 1.5.14)
+        kotlinCompilerExtensionVersion '1.5.14'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+        freeCompilerArgs += [
+                "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api"
+        ]
+    }
+
+    packaging {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+        jniLibs {
+            // AGP 8.5.1+ uses uncompressed JNI with 16 KB zip alignment required by Play on API 35+ (see developer.android.com/guide/practices/page-sizes)
+            useLegacyPackaging false
+        }
+    }
+}
+
+dependencies {
+    // Align with Compose Compiler 1.5.14 / Kotlin 1.9.24
+    def composeBom = platform('androidx.compose:compose-bom:2023.10.01')
+
+    implementation composeBom
+    androidTestImplementation composeBom
+
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+    implementation 'androidx.activity:activity-compose:1.8.2'
+    implementation 'androidx.navigation:navigation-compose:2.7.6'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-runtime-compose:2.6.2'
+    implementation 'androidx.compose.material:material-icons-extended'
+    implementation 'com.google.android.material:material:1.12.0'
+
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+
+    implementation 'io.livekit:livekit-android-compose-components:2.2.1'
+    implementation 'io.coil-kt:coil-compose:2.5.0'
+
+    implementation platform('com.google.firebase:firebase-bom:33.5.1')
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.android.gms:play-services-auth:21.2.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.8.1'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
+}
+
+// If you run assembleRelease without keystore.properties, the APK is unsigned (not valid for Play verification).
+afterEvaluate {
+    tasks.named('assembleRelease').configure {
+        doFirst {
+            if (!keystorePropertiesFile.exists()) {
+                logger.lifecycle(
+                    '\n[StudySync] No keystore.properties: release APK will be UNSIGNED.\n' +
+                        '  For Play: copy keystore.properties.example to keystore.properties, or use Build > Generate Signed APK.\n' +
+                        '  See PLAY_CONSOLE_VERIFICATION.txt\n'
+                )
+            }
+        }
+    }
+}

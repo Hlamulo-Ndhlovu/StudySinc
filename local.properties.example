@@ -1,0 +1,17 @@
+# Copy LIVEKIT_* lines into your real local.properties (keep your sdk.dir line).
+#
+# --- Don’t have a LiveKit server yet? ---
+# You can still use StudySync (Firebase chat, groups, etc.). LiveKit is only for video/audio calls.
+#
+# Easiest way to try calls: https://cloud.livekit.io — free tier, no self-hosting.
+#   1. Create a project → copy the WebSocket URL (wss://xxxx.livekit.cloud) → LIVEKIT_URL=...
+#   2. In THAT SAME project, generate a short-lived access token → LIVEKIT_TOKEN=... (one long line)
+#   3. Sync Gradle, rebuild, open a class and join the live call again.
+#
+# If you see "Could not fetch region settings: 401": the token does not match LIVEKIT_URL (wrong LiveKit
+# project), or the token expired. Always regenerate the token in the same cloud project as the WebSocket URL.
+#
+# Self-hosted later: wss://livekit.yourdomain.com and tokens from your API key/secret (livekit-cli).
+
+LIVEKIT_URL=
+LIVEKIT_TOKEN=

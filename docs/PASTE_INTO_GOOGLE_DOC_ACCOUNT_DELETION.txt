@@ -1,0 +1,24 @@
+================================================================================
+Copy everything below the line into your Google Doc (after your policy text),
+then save. If "Publish to the web" + auto-republish is on, your /pub link updates.
+Use that SAME /pub URL in Play Console → Data safety → Delete account URL.
+================================================================================
+
+Account deletion (Google Play)
+
+You can request deletion of your StudySync account and the personal data we associate with it.
+
+1. Send an email to hlamulondhlovu11@gmail.com from the address you used to sign in to StudySync (or say clearly which account to delete).
+
+2. Use the subject line: Delete my StudySync account.
+
+3. We will confirm receipt and process your request within a reasonable time (typically within 30 days), unless we must retain certain information for legal or security reasons.
+
+Deleting your account may remove or anonymize your profile and content you contributed, subject to backups, legal holds, and what other users or classes still need to function.
+
+================================================================================
+Play Console → Data safety: set "Delete account URL" to your published policy URL, e.g.
+https://docs.google.com/document/d/e/2PACX-1vQur707vVXkHpojXRbPUpx3Btj5huDO66LAEQH9YprYs6gkMEQUr8YIvulICC_EDF3pOw781iRBiJYf/pub
+
+Question "delete some data without deleting account?" → usually No unless you offer that.
+================================================================================

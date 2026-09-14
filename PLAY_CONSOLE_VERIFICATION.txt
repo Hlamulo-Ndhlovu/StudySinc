@@ -1,0 +1,74 @@
+StudySync — Google Play (fresh app / new verification)
+========================================================
+
+Package name (applicationId)
+----------------------------
+Release: com.prokreatives.studysync
+Debug:   com.prokreatives.studysync.dev   (applicationIdSuffix ".dev")
+
+Use this exact package when creating the app in Play Console. Do NOT use
+com.studysync unless you still own one of Google’s “eligible” old keys.
+
+Firebase (required after this change)
+-------------------------------------
+1. Open Firebase Console → your project → Project settings.
+2. Add Android app with package: com.prokreatives.studysync
+3. Add Android app with package: com.prokreatives.studysync.dev (for debug builds)
+4. Download google-services.json and replace app/google-services.json
+   (new file will have correct mobilesdk_app_id values for each package).
+5. Re-add SHA-1 / SHA-256 of your debug and release keystores under each app
+   if you use Google Sign-In.
+
+Starting fresh after deleting the old package
+---------------------------------------------
+1. Create the new app in Play Console — package must match applicationId in
+   app/build.gradle (com.prokreatives.studysync).
+
+2. If Android developer verification asks for adi-registration.properties:
+   - Create: app/src/main/assets/adi-registration.properties
+   - Put EXACTLY one line: the snippet Google shows (copy/paste from Play).
+   - Rebuild a SIGNED release APK/AAB, then upload.
+
+3. Sign every release with ONE keystore you keep forever (backup the .jks).
+   Your current keystore: Documents/mykeystore/keystore1.jks, alias key0.
+   Use keystore.properties in project root (see keystore.properties.example).
+
+4. After verification, you can delete adi-registration.properties if Play no
+   longer requires it, or leave it — it is harmless if unused.
+
+5. First upload to Play: prefer Android App Bundle (AAB): Build > Generate
+   Signed App Bundle. versionCode must increase for every release (starts at 1).
+
+Verify signing
+--------------
+  keytool -list -v -keystore "C:\Users\hlamu\Documents\mykeystore\keystore1.jks"
+
+  keytool -printcert -jarfile "path\to\signed-release.apk"
+
+Never upload *unsigned* APKs. See keystore.properties.example for Gradle signing.
+
+Privacy policy (required for CAMERA / microphone, etc.)
+-------------------------------------------------------
+Play blocks releases if the app uses sensitive permissions (e.g. CAMERA,
+RECORD_AUDIO) until a **public HTTPS privacy policy URL** is set in the console.
+
+**Easiest walkthrough (no coding):** open and follow:
+  `docs/HOST_YOUR_PRIVACY_POLICY.txt`
+Use the plain text to paste into Google Sites:
+  `docs/privacy-policy-COPY-PASTE.txt`
+(Optional HTML version: `docs/privacy-policy.html`)
+
+Summary: publish a free Google Site → copy its https:// link → Play Console →
+App content → Privacy policy → paste URL → same URL in `strings.xml`
+`privacy_policy_url` → **App content → Data safety** must match the policy.
+
+If you update the hosted policy, add the “Acceptable use and content” section
+(from `docs/privacy-policy-COPY-PASTE.txt`) so it matches the in-app Settings
+text. For Play questionnaires about user-generated or sexual content, answer
+truthfully: the app is for study collaboration; nudity and sexually explicit
+content are prohibited (see Community standards in Settings).
+
+Firebase
+--------
+If you change applicationId, download a new google-services.json from Firebase
+and replace app/google-services.json.

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StudySync</string>
+    <string name="google_sign_in_web_client_missing">Ukungena nge-Google akumisiwe: setha i-default_web_client_id ku-strings.xml ibe yi-Web client ID yakho ye-Firebase.</string>
+    <string name="google_sign_in_no_id_token">I-Google ayizange ibuyise ithokheni yokungena. Hlola izilungiselelo zephrojekthi ye-Firebase yohlelo lwakho lwe-Android.</string>
+    <string name="google_sign_in_developer_error">Iphutha lokusetha kwe-Google Sign-In: bhalisa i-SHA-1 ku-Firebase, vula i-Google njengendlela yokungena, usebenzise i-Web client ID.</string>
+
+    <string name="brand_tagline">Yabelana ngemibhalo, hlangana ku-inthanethi, futhi uxoxe — ndawonye</string>
+    <string name="drawer_section_main">Okuyinhloko</string>
+
+    <string name="nav_home">Ikhaya</string>
+    <string name="nav_dashboard">Ideshibhodi</string>
+    <string name="nav_community">Umphakathi</string>
+    <string name="nav_chats">Ingxoxo</string>
+    <string name="nav_classes">Amakilasi</string>
+    <string name="nav_groups">Amaqembu</string>
+    <string name="nav_profile">Iphrofayela</string>
+
+    <string name="nav_drawer_dashboard">Ideshibhodi</string>
+    <string name="nav_drawer_groups">Amaqembu</string>
+    <string name="nav_drawer_classes">Amakilasi</string>
+    <string name="nav_drawer_friends">Abangane</string>
+    <string name="nav_drawer_chats">Imilayezo</string>
+    <string name="nav_drawer_settings">Izilungiselelo</string>
+    <string name="nav_drawer_progress">Inqubekela phambili</string>
+    <string name="nav_drawer_app_notifications">Izaziso zohlelo</string>
+    <string name="nav_drawer_profile">Iphrofayela</string>
+
+    <string name="app_notifications_bell_cd">Izaziso zohlelo</string>
+    <string name="app_notifications_title">Izaziso zohlelo</string>
+    <string name="app_notifications_hero_title">Hlala unolwazi</string>
+    <string name="app_notifications_hero_subtitle">Khetha ukuthi i-StudySync ingakwazisa ngani ngaphakathi kohlelo. Sebenzisa izilungiselelo zedivayisi yakho yemisindo namabhena.</string>
+    <string name="app_notifications_section_in_app">Ku-StudySync</string>
+    <string name="app_notifications_toggle_title">Izexwayiso ze-StudySync</string>
+    <string name="app_notifications_toggle_subtitle">Amakilasi amasha, izicelo zabangane, izibuyekezo ezabiwe, nezikhumbuzi</string>
+    <string name="app_notifications_section_device">Kule divayisi</string>
+    <string name="app_notifications_device_explainer">I-Android isengavimbela izaziso uma zivaliwe ku-StudySync. Vula izilungiselelo zohlelo ukuze uvumele amabhena nomsindo.</string>
+    <string name="app_notifications_request_permission">Vumela imvume yezaziso (Android 13+)</string>
+    <string name="app_notifications_open_system_settings">Vula izilungiselelo zezaziso zohlelo</string>
+    <string name="settings_app_notifications_hint">Ivula izintandokazi zezaziso kuphela (hhayi izilungiselelo zonke).</string>
+
+    <string name="dashboard_greeting">Sawubona, %1$s 👋</string>
+    <string name="dashboard_subtitle">Isikhungo sakho semibhalo, imihlangano ebukhoma, nezingxoxo.</string>
+    <string name="dashboard_pulse">%1$d abangane ku-inthanethi · %2$d amaqembu asebenzayo</string>
+    <string name="dashboard_sign_out">Phuma</string>
+    <string name="dashboard_menu">Imenyu</string>
+    <string name="dashboard_loading">Kulayishwa isikhungo sakho…</string>
+    <string name="dashboard_section_overview">Ukubuka konke</string>
+    <string name="dashboard_section_schedule">Ishejuli</string>
+
+    <string name="section_quick_actions">Izenzo ezisheshayo</string>
+    <string name="stat_classes">Amakilasi akho</string>
+    <string name="stat_friends">Kuxhunyiwe</string>
+    <string name="stat_groups">Kuyasebenza</string>
+    <string name="stat_friends_online">%1$d ku-inthanethi manje</string>
+    <string name="stat_groups_active">%1$d asebenzayo</string>
+    <string name="section_spotlight">Amaqembu asebenzayo</string>
+    <string name="section_recent_messages">Imilayezo yakamuva</string>
+    <string name="section_recent_activity">Umsebenzi wakamuva</string>
+    <string name="dashboard_view_all">Buka konke</string>
+    <string name="quick_new_session">Umhlangano obukhoma</string>
+    <string name="quick_join_group">Joyina iqembu</string>
+    <string name="quick_flashcards">Amafayela emaqenjini</string>
+    <string name="quick_add_note">Imilayezo</string>
+    <string name="friends_search_hint">Sesha abantu osebenza nabo</string>
+    <string name="friends_empty_hint">Awekho oxhumana nabo okwamanje. Thepha u-+ ukumema othile nge-imeyili.</string>
+
+    <string name="auth_hero_subtitle">Ngena ukuze wabelane ngamafayela, ujoyine imihlangano ebukhoma, uthumele imilayezo emaqenjini akho.</string>
+    <string name="auth_acceptable_use_notice">Ukufunda nokusebenzisana kuphela. Ubunqunu nokuqukethwe kwezocansi akuvunyelwe.</string>
+
+    <string name="settings_community_standards_title">Amazinga omphakathi</string>
+    <string name="settings_community_standards_body">I-StudySync yenzelwe ukufunda nokusebenza ndawonye. Ungabelani, ungaceli, noma ungabheki ubunqunu, izithombe noma ividiyo yocansi, noma okuqukethwe okunye kwezocansi emilayezweni, emafayeleni, ezingcingweni zevidiyo, noma kuphrofayela yakho. Singasusa okuqukethwe futhi simise ama-akhawunti ephula le mithetho.</string>
+    <string name="classes_hero_subtitle">Hlela izikhathi, uqale ukusakaza, ugcine amanothi nezinsiza endaweni eyodwa.</string>
+    <string name="classes_hint_has_items">Vula ikilasi ukuze uthole imininingwane, ividiyo ebukhoma, namafayela abiwe. Ungalishintsha esikrinini semininingwane.</string>
+    <string name="classes_hint_empty">Dala ikilasi ngo-+ ukuze wengeze imihlangano, izixhumanisi, nemibhalo.</string>
+    <string name="dashboard_empty_activity">Awukabikho umsebenzi wakamuva. Vula iqembu ukuze wabelane ngamafayela uxoxe, noma uqale ikilasi lemihlangano ebukhoma.</string>
+    <string name="chats_hero_subtitle">Thumela imilayezo emaqenjini akho ulandele izibuyekezo ezabiwe.</string>
+    <string name="groups_hero_title">Amaqembu</string>
+    <string name="groups_hero_subtitle">Dala indawo yokuxoxa nokwabelana ngemibhalo — bese uvula Imilayezo ukuze ukhulume.</string>
+    <string name="groups_dialog_new_title">Iqembu elisha</string>
+    <string name="groups_empty_hint">Awekho amaqembu okwamanje. Thepha u-+ ukudala indawo yamafayela nengxoxo.</string>
+    <string name="profile_default_display_name">Ilungu le-StudySync</string>
+    <string name="profile_account_id_label">I-ID ye-akhawunti: %1$s</string>
+    <string name="profile_default_bio">Ngilapha ukwabelana ngamafayela, ukuhlangana ku-inthanethi, nokuhlala ngixhumene namaqembu ami.</string>
+    <string name="profile_sample_post_body">Yabelana ngezibuyekezo, amafayela, namanothi emihlangano namaqembu akho. Izici eziningi ziyeza.</string>
+
+    <string name="privacy_policy">Inqubomgomo yobumfihlo</string>
+    <string name="settings_report_safety_title">Bika inkinga yokuphepha</string>
+    <string name="settings_report_safety_cta">Bhala i-imeyili</string>
+    <string name="settings_report_safety_subtitle">Sithumelele i-imeyili mayelana nokuhlukunyezwa, okuqukethwe okungafanele, noma okunye ukwephula. Yisho okwenzekile nalapho (isibonelo igama leqembu noma lekilasi).</string>
+    <string name="settings_report_email_body">Chaza okwenzekile nalapho ukubonile khona (iqembu, ikilasi, ingxoxo, noma iphrofayela). Sizobuyekeza ngokushesha.\n\n(Uhlelo lwakho lweposi lungafaka ikheli lakho ngokuzenzakalelayo.)</string>
+    <string name="settings_report_no_email_app">Alukho uhlelo lwe-imeyili. Thumela umlayezo ekhelini elikhonjiswe kuNqubomgomo yobumfihlo.</string>
+
+    <string name="notification_channel_classes_name">Amakilasi</string>
+    <string name="notification_channel_classes_description">Amakilasi, imihlangano, nezibuyekezo zeshejuli</string>
+    <string name="notification_channel_general_name">Okujwayelekile</string>
+    <string name="notification_channel_general_description">Izikhumbuzi nezibuyekezo ze-StudySync</string>
+    <string name="notification_channel_friends_name">Abangane</string>
+    <string name="notification_channel_friends_description">Lapho othile ekufaka njengomngane</string>
+    <string name="notification_class_created_title">Ikilasi lidalwe</string>
+    <string name="notification_class_created_body">“%1$s” selilungile. Thepha ukuze uvule.</string>
+    <string name="class_created_snackbar">Ikilasi lidalwe: %1$s</string>
+    <string name="notification_friend_added_title">Umngane omusha</string>
+    <string name="notification_friend_added_body">U-%1$s ukufakile ku-StudySync. Thepha ukuze uvule Abangane.</string>
+
+    <string name="action_back">Emuva</string>
+    <string name="settings_title">Izilungiselelo</string>
+    <string name="settings_hero_title">Izintandokazi zakho</string>
+    <string name="settings_hero_subtitle">Itimu, ulimi, amazinga omphakathi, ne-akhawunti. Izilawuli zezaziso zingaphansi kwezaziso zohlelo.</string>
+    <string name="settings_section_preferences">Izintandokazi</string>
+    <string name="settings_dark_mode">Imodi emnyama</string>
+    <string name="settings_dark_mode_subtitle">Sebenzisa ukubukeka okumnyama kulo lonke uhlelo</string>
+    <string name="settings_section_language">Ulimi</string>
+    <string name="settings_language_subtitle">I-StudySync kumele ibe nolimi olulodwa okungenani. Khetha i-English, i-Afrikaans, i-Sepedi, isiZulu, noma isiTsonga.</string>
+    <string name="settings_section_legal">Ezomthetho</string>
+    <string name="settings_section_account">I-akhawunti</string>
+    <string name="settings_sign_out">Phuma</string>
+
+    <string name="gamification_title">Inqubekela phambili</string>
+    <string name="gamification_hero_subtitle">Thola i-XP ngokudala amakilasi, ukujoyina amaqembu, ukwengeza abangane, ukwabelana ngamafayela, nokuvula i-StudySync nsuku zonke.</string>
+    <string name="gamification_level">Ileveli %1$d</string>
+    <string name="gamification_xp_label">%1$d XP</string>
+    <string name="gamification_xp_progress">%1$d / %2$d XP kuya kuleveli elandelayo</string>
+    <string name="gamification_streak_days">Uchungechunge lwezinsuku ezingu-%1$d</string>
+    <string name="gamification_badges">Amabheji</string>
+    <string name="gamification_dashboard_cta">Thepha ukuze ubuke amabheji, uchungechunge, neleveli</string>
+
+    <string name="badge_welcome_title">Siyakwamukela</string>
+    <string name="badge_welcome_desc">Ungene waqala ukusebenzisa i-StudySync.</string>
+    <string name="badge_first_class_title">Ikilasi lokuqala</string>
+    <string name="badge_first_class_desc">Dala noma ujoyine ikilasi lakho lokuqala.</string>
+    <string name="badge_first_group_title">Umdlali weqembu</string>
+    <string name="badge_first_group_desc">Dala noma ujoyine iqembu lokufunda.</string>
+    <string name="badge_connector_title">Isixhumanisi</string>
+    <string name="badge_connector_desc">Engeza okungenani abangane abathathu.</string>
+    <string name="badge_scholar_title">Isifundiswa</string>
+    <string name="badge_scholar_desc">Yiba namakilasi amahlanu kushejuli yakho.</string>
+    <string name="badge_streak3_title">Uyaqhubeka</string>
+    <string name="badge_streak3_desc">Vula i-StudySync izinsuku ezintathu zilandelana.</string>
+    <string name="badge_streak7_title">Iqhawe leviki</string>
+    <string name="badge_streak7_desc">Gcina uchungechunge lwezinsuku eziyisikhombisa.</string>
+</resources>

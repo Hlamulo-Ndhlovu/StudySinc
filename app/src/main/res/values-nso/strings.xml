@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StudySync</string>
+    <string name="google_sign_in_web_client_missing">Go ine ya Google ga e a beakanywa: bea default_web_client_id go strings.xml ka ID ya Web client ya Firebase.</string>
+    <string name="google_sign_in_no_id_token">Google ga se ya buša setlankana sa go tsena. Lekola dipeakanyo tša projeke ya Firebase bakeng sa app ya gago ya Android.</string>
+    <string name="google_sign_in_developer_error">Phošo ya peakanyo ya Google Sign-In: ngwadiša SHA-1 go Firebase, bula Google e le mokgwa wa go tsena, o šomiše Web client ID.</string>
+
+    <string name="brand_tagline">Abelana ditokumente, kopana inthaneteng, le go bolela — mmogo</string>
+    <string name="drawer_section_main">Hlogo</string>
+
+    <string name="nav_home">Gae</string>
+    <string name="nav_dashboard">Leswika la taolo</string>
+    <string name="nav_community">Setšhaba</string>
+    <string name="nav_chats">Dipoledišano</string>
+    <string name="nav_classes">Diklase</string>
+    <string name="nav_groups">Dihlopha</string>
+    <string name="nav_profile">Profaele</string>
+
+    <string name="nav_drawer_dashboard">Leswika la taolo</string>
+    <string name="nav_drawer_groups">Dihlopha</string>
+    <string name="nav_drawer_classes">Diklase</string>
+    <string name="nav_drawer_friends">Bagwera</string>
+    <string name="nav_drawer_chats">Melaetša</string>
+    <string name="nav_drawer_settings">Dipeakanyo</string>
+    <string name="nav_drawer_progress">Tšwelopele</string>
+    <string name="nav_drawer_app_notifications">Ditsebišo tša app</string>
+    <string name="nav_drawer_profile">Profaele</string>
+
+    <string name="app_notifications_bell_cd">Ditsebišo tša app</string>
+    <string name="app_notifications_title">Ditsebišo tša app</string>
+    <string name="app_notifications_hero_title">Dula o tseba</string>
+    <string name="app_notifications_hero_subtitle">Kgetha seo StudySync e ka go tsebišago ka sona ka gare ga app. Šomiša dipeakanyo tša sedirišwa bakeng sa medumo le dibanner.</string>
+    <string name="app_notifications_section_in_app">Ka gare ga StudySync</string>
+    <string name="app_notifications_toggle_title">Ditsebišo tša StudySync</string>
+    <string name="app_notifications_toggle_subtitle">Diklase tše mpsha, dikgopelo tša bagwera, dikaonafatšo tše abelanwago, le dikgopotšo</string>
+    <string name="app_notifications_section_device">Sedirišweng se</string>
+    <string name="app_notifications_device_explainer">Android e sa kgona go thibela ditsebišo ge di tswaletšwe bakeng sa StudySync. Bula dipeakanyo tša tshepedišo go dumelela dibanner le modumo.</string>
+    <string name="app_notifications_request_permission">Dumelela tumelelo ya ditsebišo (Android 13+)</string>
+    <string name="app_notifications_open_system_settings">Bula dipeakanyo tša ditsebišo tša tshepedišo</string>
+    <string name="settings_app_notifications_hint">E bula fela dikgetho tša ditsebišo (e sego dipeakanyo ka moka).</string>
+
+    <string name="dashboard_greeting">Thobela, %1$s 👋</string>
+    <string name="dashboard_subtitle">Lefelo la gago la ditokumente, dikopano tša live, le dipoledišano.</string>
+    <string name="dashboard_pulse">%1$d bagwera inthaneteng · %2$d dihlopha tše di šomago</string>
+    <string name="dashboard_sign_out">Tswalela</string>
+    <string name="dashboard_menu">Menu</string>
+    <string name="dashboard_loading">Re tsenya lefelo la gago…</string>
+    <string name="dashboard_section_overview">Kakaretšo</string>
+    <string name="dashboard_section_schedule">Lenaneo</string>
+
+    <string name="section_quick_actions">Dikgato tša ka pela</string>
+    <string name="stat_classes">Diklase tša gago</string>
+    <string name="stat_friends">Kgokagantšwe</string>
+    <string name="stat_groups">E a šoma</string>
+    <string name="stat_friends_online">%1$d inthaneteng gona bjale</string>
+    <string name="stat_groups_active">%1$d di a šoma</string>
+    <string name="section_spotlight">Dihlopha tše di šomago</string>
+    <string name="section_recent_messages">Melaetša ya morago bjale</string>
+    <string name="section_recent_activity">Mošomo wa morago bjale</string>
+    <string name="dashboard_view_all">Bona ka moka</string>
+    <string name="quick_new_session">Kopano ya live</string>
+    <string name="quick_join_group">Tsena sehlopheng</string>
+    <string name="quick_flashcards">Difaele dihlopheng</string>
+    <string name="quick_add_note">Melaetša</string>
+    <string name="friends_search_hint">Nyaka batho bao o šomago le bona</string>
+    <string name="friends_empty_hint">Ga go na dikgokagano. Tobetsa + go laletša motho ka imeile.</string>
+
+    <string name="auth_hero_subtitle">Tsena gore o abelane difaele, o tsene dikopanong tša live, o romele melaetša dihlopheng tša gago.</string>
+    <string name="auth_acceptable_use_notice">Bakeng sa thuto le tšhomišano fela. Bofeela le diteng tša thobalano ga di dumelelwe.</string>
+
+    <string name="settings_community_standards_title">Melao ya setšhaba</string>
+    <string name="settings_community_standards_body">StudySync ke ya go ithuta le go šoma mmogo. O se ke wa abelana, wa kgopela, goba wa nyaka ditshwantšho tša bofeela, tša thobalano, goba diteng tše dingwe tša thobalano melaetšeng, difaeleng, dikgoung tša video, goba profaeleng ya gago. Re ka tloša diteng le go emiša diakhaonte tše di robago melao ye.</string>
+    <string name="classes_hero_subtitle">Beakanya dikopano, tsena live, o boloke dinoutse le didirišwa lefelong le tee.</string>
+    <string name="classes_hint_has_items">Bula klase bakeng sa dintlha, video ya live, le difaele tše abelanwago. O ka e fetola go tšwa skrining sa dintlha.</string>
+    <string name="classes_hint_empty">Hlama klase ka + go tsenya dikopano, dilinki, le ditokumente.</string>
+    <string name="dashboard_empty_activity">Ga go na mošomo wa morago bjale. Bula sehlopha go abelana difaele le go bolela, goba thoma klase ya dikopano tša live.</string>
+    <string name="chats_hero_subtitle">Romela melaetša dihlopheng tša gago o latele dikaonafatšo tše abelanwago.</string>
+    <string name="groups_hero_title">Dihlopha</string>
+    <string name="groups_hero_subtitle">Hlama lefelo la go bolela le go abelana ditokumente — ke moka o bule Melaetša go bolela.</string>
+    <string name="groups_dialog_new_title">Sehlopha se sefsa</string>
+    <string name="groups_empty_hint">Ga go na dihlopha. Tobetsa + go hlama lefelo la difaele le poledišano.</string>
+    <string name="profile_default_display_name">Leloko la StudySync</string>
+    <string name="profile_account_id_label">ID ya akhaonte: %1$s</string>
+    <string name="profile_default_bio">Ke fano go abelana difaele, go kopana inthaneteng, le go dula ke kgokagane le dihlopha tša ka.</string>
+    <string name="profile_sample_post_body">Abelana dikaonafatšo, difaele, le dinoutse tša dikopano le dihlopha tša gago. Dithušo tše dingwe di a tla.</string>
+
+    <string name="privacy_policy">Pholisi ya sephiri</string>
+    <string name="settings_report_safety_title">Bega bothata bja polokego</string>
+    <string name="settings_report_safety_cta">Ngwala imeile</string>
+    <string name="settings_report_safety_subtitle">Re romele imeile ka tlaišo, diteng tše sa swanelago, goba ditlolo tše dingwe. Bolela se se diregilego le moo (mohlala leina la sehlopha goba klase).</string>
+    <string name="settings_report_email_body">Hlalosa se se diregilego le moo o se bonego gona (sehlopha, klase, poledišano, goba profaele). Re tla lekola ka pela.\n\n(App ya gago ya poso e ka kgomaganya aterese ya gago ka bowona.)</string>
+    <string name="settings_report_no_email_app">Ga go na app ya imeile. Romela molaetša atereseng ye e bontšhitšwego go Pholisi ya sephiri.</string>
+
+    <string name="notification_channel_classes_name">Diklase</string>
+    <string name="notification_channel_classes_description">Diklase, dikopano, le dikaonafatšo tša lenaneo</string>
+    <string name="notification_channel_general_name">Kakaretšo</string>
+    <string name="notification_channel_general_description">Dikgopotšo le dikaonafatšo tša StudySync</string>
+    <string name="notification_channel_friends_name">Bagwera</string>
+    <string name="notification_channel_friends_description">Ge motho a go tsenya bjalo ka mogwera</string>
+    <string name="notification_class_created_title">Klase e hlomilwe</string>
+    <string name="notification_class_created_body">“%1$s” e lokile. Tobetsa go bula.</string>
+    <string name="class_created_snackbar">Klase e hlomilwe: %1$s</string>
+    <string name="notification_friend_added_title">Mogwera yo mofsa</string>
+    <string name="notification_friend_added_body">%1$s o go tsentše go StudySync. Tobetsa go bula Bagwera.</string>
+
+    <string name="action_back">Boela morago</string>
+    <string name="settings_title">Dipeakanyo</string>
+    <string name="settings_hero_title">Dikgetho tša gago</string>
+    <string name="settings_hero_subtitle">Tema, polelo, melao ya setšhaba, le akhaonte. Taolo ya ditsebišo e ka fase ga Ditsebišo tša app.</string>
+    <string name="settings_section_preferences">Dikgetho</string>
+    <string name="settings_dark_mode">Mokgwa wo moso</string>
+    <string name="settings_dark_mode_subtitle">Šomiša ponagalo ye moso go app ka moka</string>
+    <string name="settings_section_language">Polelo</string>
+    <string name="settings_language_subtitle">StudySync e swanetše go ba le bonyenyane polelo e tee. Kgetha Seisemane, Afrikaans, Sepedi, isiZulu, goba Xitsonga.</string>
+    <string name="settings_section_legal">Melao</string>
+    <string name="settings_section_account">Akhaonte</string>
+    <string name="settings_sign_out">Tswalela</string>
+
+    <string name="gamification_title">Tšwelopele</string>
+    <string name="gamification_hero_subtitle">Hwetša XP ka go hlama diklase, go tsena dihlopheng, go tsenya bagwera, go abelana difaele, le go bula StudySync letšatši le lengwe le le lengwe.</string>
+    <string name="gamification_level">Maemo %1$d</string>
+    <string name="gamification_xp_label">%1$d XP</string>
+    <string name="gamification_xp_progress">%1$d / %2$d XP go fihla maemong a latelago</string>
+    <string name="gamification_streak_days">Letšatši tše %1$d tša go tšwela pele</string>
+    <string name="gamification_badges">Dibetšhe</string>
+    <string name="gamification_dashboard_cta">Tobetsa go bona dibetšhe, letšatši tša go tšwela pele, le maemo</string>
+
+    <string name="badge_welcome_title">Re a go amogela</string>
+    <string name="badge_welcome_desc">O tsene wa thoma go šomiša StudySync.</string>
+    <string name="badge_first_class_title">Klase ya mathomo</string>
+    <string name="badge_first_class_desc">Hlama goba tsena klaseng ya gago ya mathomo.</string>
+    <string name="badge_first_group_title">Motšeakarolo wa sehlopha</string>
+    <string name="badge_first_group_desc">Hlama goba tsena sehlopheng sa thuto.</string>
+    <string name="badge_connector_title">Mokgokaganyi</string>
+    <string name="badge_connector_desc">Tsenya bonyenyane bagwera ba bararo.</string>
+    <string name="badge_scholar_title">Morutegi</string>
+    <string name="badge_scholar_desc">Ba le diklase tše hlano lenaneong la gago.</string>
+    <string name="badge_streak3_title">O a tšwela pele</string>
+    <string name="badge_streak3_desc">Bula StudySync matšatši a mararo ka go latelana.</string>
+    <string name="badge_streak7_title">Mohlabani wa beke</string>
+    <string name="badge_streak7_desc">Boloka matšatši a šupa a go tšwela pele.</string>
+</resources>

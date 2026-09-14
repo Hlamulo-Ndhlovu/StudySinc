@@ -1,0 +1,85 @@
+================================================================================
+You need ONE public web link (https://...) for Google Play. Easiest path below.
+================================================================================
+
+Google Play does not host the policy for you. You paste a link into:
+  Play Console → Policy / App content → Privacy policy
+
+If you already use Play Console, you almost certainly have a Google account.
+Use the SAME account for Google Sites (free). No coding required.
+
+
+--------------------------------------------------------------------------------
+OPTION A — Google Sites (recommended, ~10 minutes)
+--------------------------------------------------------------------------------
+
+1. On a computer, open:  https://sites.google.com/new
+
+2. Sign in with your Google account if asked.
+
+3. Click "Blank" (or any starter). Give the site a title at the top, e.g.:
+      StudySync Privacy Policy
+
+4. Click the page so you can type. Copy text from this folder:
+      docs/privacy-policy-COPY-PASTE.txt
+   Paste it into the page (you can paste everything at once, or section by section).
+
+5. Find YOUR_EMAIL_HERE in the text and replace it with your real email.
+
+6. Click "Publish" (top right).
+
+7. Choose a short web address Google offers, e.g. studysync-privacy
+   (You will get a link like: https://sites.google.com/view/studysync-privacy/home )
+
+8. Click Publish again to confirm.
+
+9. OPEN that link in a private/incognito window. You should see your policy
+   without signing in. That is the link Google Play wants.
+
+10. In Play Console → your app → App content → Privacy policy:
+    Paste the full https:// link. Save.
+
+11. In your Android project, open:
+      app/src/main/res/values/strings.xml
+    Set privacy_policy_url to that SAME https link (so Settings opens it).
+
+12. Rebuild your release AAB and upload again to Play.
+
+
+--------------------------------------------------------------------------------
+OPTION B — You already use GitHub
+--------------------------------------------------------------------------------
+
+1. Create a new public repository (any name).
+
+2. Upload docs/privacy-policy.html and rename it to index.html at the repo root,
+   OR use GitHub's "Add file" and paste the HTML contents.
+
+3. Enable GitHub Pages: Repository → Settings → Pages → Source: main branch,
+   folder / (root). Save.
+
+4. After a minute, GitHub shows a URL like:
+      https://YOUR_USERNAME.github.io/YOUR_REPO/
+
+5. Use that URL in Play Console (Privacy policy) and in strings.xml
+   (privacy_policy_url).
+
+
+--------------------------------------------------------------------------------
+After the link works
+--------------------------------------------------------------------------------
+
+• In Play Console, complete "Data safety" so it matches what the policy says
+  (camera, microphone, account, messages, etc.).
+
+• You do NOT need to remove CAMERA from the app if the policy explains it.
+
+
+--------------------------------------------------------------------------------
+Stuck?
+--------------------------------------------------------------------------------
+
+• The link must start with https://
+• The page must open for strangers (not "only people in my organization")
+• Google Sites: when publishing, avoid restricting to "only people @yourdomain"
+  unless that still allows the public (Play needs a normal public URL)
