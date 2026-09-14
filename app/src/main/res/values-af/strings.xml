@@ -124,19 +124,63 @@
     <string name="gamification_streak_days">%1$d-dag-reeks</string>
     <string name="gamification_badges">Kentekens</string>
     <string name="gamification_dashboard_cta">Tik om kentekens, reeks en vlak te sien</string>
+    <string name="gamification_tier_progress">Tier-vordering: %1$s</string>
+    <string name="gamification_achievements_unlocked">%1$d / %2$d prestasies ontgrendel</string>
 
     <string name="badge_welcome_title">Welkom</string>
     <string name="badge_welcome_desc">Jy het ingeteken en begin StudySync gebruik.</string>
-    <string name="badge_first_class_title">Eerste klas</string>
-    <string name="badge_first_class_desc">Skep of sluit by jou eerste klas aan.</string>
-    <string name="badge_first_group_title">Spanspeler</string>
-    <string name="badge_first_group_desc">Skep of sluit by ’n studiegroep aan.</string>
-    <string name="badge_connector_title">Verbinder</string>
-    <string name="badge_connector_desc">Voeg ten minste drie vriende by.</string>
-    <string name="badge_scholar_title">Geleerde</string>
-    <string name="badge_scholar_desc">Hê vyf klasse op jou rooster.</string>
-    <string name="badge_streak3_title">Op dreef</string>
-    <string name="badge_streak3_desc">Maak StudySync drie dae agtereenvolgens oop.</string>
-    <string name="badge_streak7_title">Weekvegter</string>
-    <string name="badge_streak7_desc">Hou ’n sewe-dag-reeks.</string>
+    
+    <!-- Class Achievements -->
+    <string name="badge_class_bronze_title">Klas-beginner</string>
+    <string name="badge_class_bronze_desc">Skep of sluit by jou eerste klas aan.</string>
+    <string name="badge_class_silver_title">Klas-liefhebber</string>
+    <string name="badge_class_silver_desc">Skep of sluit by 5 klasse aan.</string>
+    <string name="badge_class_gold_title">Klas-meester</string>
+    <string name="badge_class_gold_desc">Skep of sluit by 10 klasse aan.</string>
+    <string name="badge_class_platinum_title">Kas-legende</string>
+    <string name="badge_class_platinum_desc">Skep of sluit by 25 klasse aan.</string>
+    
+    <!-- Group Achievements -->
+    <string name="badge_group_bronze_title">Groep-starter</string>
+    <string name="badge_group_bronze_desc">Skep of sluit by jou eerste studiegroep aan.</string>
+    <string name="badge_group_silver_title">Groep-bouer</string>
+    <string name="badge_group_silver_desc">Skep of sluit by 3 studiegroepe aan.</string>
+    <string name="badge_group_gold_title">Groep-leier</string>
+    <string name="badge_group_gold_desc">Skep of sluit by 5 studiegroepe aan.</string>
+    
+    <!-- Friend Achievements -->
+    <string name="badge_friend_bronze_title">Vriendelike gesig</string>
+    <string name="badge_friend_bronze_desc">Voeg jou eerste vriend by.</string>
+    <string name="badge_friend_silver_title">Sosiale vlinder</string>
+    <string name="badge_friend_silver_desc">Voeg 5 vriende by.</string>
+    <string name="badge_friend_gold_title">Netwerk-ster</string>
+    <string name="badge_friend_gold_desc">Voeg 10 vriende by.</string>
+    <string name="badge_friend_platinum_title">Gemeenskap-ikoon</string>
+    <string name="badge_friend_platinum_desc">Voeg 25 vriende by.</string>
+    
+    <!-- Streak Achievements -->
+    <string name="badge_streak_bronze_title">Aan die begin</string>
+    <string name="badge_streak_bronze_desc">Maak StudySync 3 dae agtereenvolgens oop.</string>
+    <string name="badge_streak_silver_title">Weekvegter</string>
+    <string name="badge_streak_silver_desc">Maak StudySync 7 dae agtereenvolgens oop.</string>
+    <string name="badge_streak_gold_title">Tweeweek-kampioen</string>
+    <string name="badge_streak_gold_desc">Maak StudySync 14 dae agtereenvolgens oop.</string>
+    <string name="badge_streak_platinum_title">Maandelikse meester</string>
+    <string name="badge_streak_platinum_desc">Maak StudySync 30 dae agtereenvolgens oop.</string>
+    
+    <!-- Resource Achievements -->
+    <string name="badge_resource_bronze_title">Hulpbron-deler</string>
+    <string name="badge_resource_bronze_desc">Deel jou eerste hulpbron.</string>
+    <string name="badge_resource_silver_title">Hulpbron-bydraer</string>
+    <string name="badge_resource_silver_desc">Deel 5 hulpbronne.</string>
+    <string name="badge_resource_gold_title">Hulpbron-kenner</string>
+    <string name="badge_resource_gold_desc">Deel 10 hulpbronne.</string>
+    
+    <!-- Message Achievements -->
+    <string name="badge_message_bronze_title">Gesprek-starter</string>
+    <string name="badge_message_bronze_desc">Stuur 5 boodskappe.</string>
+    <string name="badge_message_silver_title">Aktiewe kommunikeerder</string>
+    <string name="badge_message_silver_desc">Stuur 25 boodskappe.</string>
+    <string name="badge_message_gold_title">Klets-kampioen</string>
+    <string name="badge_message_gold_desc">Stuur 50 boodskappe.</string>
 </resources>

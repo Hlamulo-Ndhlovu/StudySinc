@@ -124,19 +124,63 @@
     <string name="gamification_streak_days">Masiku ya %1$d ya ku ya emahlweni</string>
     <string name="gamification_badges">Tibheji</string>
     <string name="gamification_dashboard_cta">Tsindzela ku vona tibheji, masiku ya ku ya emahlweni, na xiyimo</string>
+    <string name="gamification_tier_progress">Ku ya emahlweni ka tier: %1$s</string>
+    <string name="gamification_achievements_unlocked">%1$d / %2$d switirhisiwa swi endliwe</string>
 
     <string name="badge_welcome_title">U amukeriwile</string>
     <string name="badge_welcome_desc">U nghenile u sungula ku tirhisa StudySync.</string>
-    <string name="badge_first_class_title">Kilasi yo sungula</string>
-    <string name="badge_first_class_desc">Tumbuluxa kumbe nghena eka kilasi ya wena yo sungula.</string>
-    <string name="badge_first_group_title">Mutirhi wa ntlawa</string>
-    <string name="badge_first_group_desc">Tumbuluxa kumbe nghena eka ntlawa wa dyondzo.</string>
-    <string name="badge_connector_title">Muhlanganisi</string>
-    <string name="badge_connector_desc">Engetela vanghana vanharhu eka ntsongo.</string>
-    <string name="badge_scholar_title">Mudyondzi</string>
-    <string name="badge_scholar_desc">Va na tiklasi ta ntlhanu eka xedulu ya wena.</string>
-    <string name="badge_streak3_title">U ya emahlweni</string>
-    <string name="badge_streak3_desc">Pfulela StudySync masiku manharhu lama landzelelaka.</string>
-    <string name="badge_streak7_title">Ntsumi wa vhiki</string>
-    <string name="badge_streak7_desc">Hlayisa masiku ya nkombo ya ku ya emahlweni.</string>
+    
+    <!-- Class Achievements -->
+    <string name="badge_class_bronze_title">Xitirhisi xa kilasi</string>
+    <string name="badge_class_bronze_desc">Tumbuluxa kumbe nghena eka kilasi ya wena yo sungula.</string>
+    <string name="badge_class_silver_title">Muhandzi wa kilasi</string>
+    <string name="badge_class_silver_desc">Tumbuluxa kumbe nghena eka tiklasi ta khume.</string>
+    <string name="badge_class_gold_title">Mufambisi wa kilasi</string>
+    <string name="badge_class_gold_desc">Tumbuluxa kumbe nghena eka tiklasi ta khume na n’we.</string>
+    <string name="badge_class_platinum_title">Xinyeleti xa kilasi</string>
+    <string name="badge_class_platinum_desc">Tumbuluxa kumbe nghena eka tiklasi ta makume mabvu.</string>
+    
+    <!-- Group Achievements -->
+    <string name="badge_group_bronze_title">Xitirhisi xa ntlawa</string>
+    <string name="badge_group_bronze_desc">Tumbuluxa kumbe nghena eka ntlawa wa wena wo sungula wa dyondzo.</string>
+    <string name="badge_group_silver_title">Vimbisi wa ntlawa</string>
+    <string name="badge_group_silver_desc">Tumbuluxa kumbe nghena eka mintlawa ya mune wa dyondzo.</string>
+    <string name="badge_group_gold_title">Nhloko ya ntlawa</string>
+    <string name="badge_group_gold_desc">Tumbuluxa kumbe nghena eka mintlawa ya khume wa dyondzo.</string>
+    
+    <!-- Friend Achievements -->
+    <string name="badge_friend_bronze_title">Vanghana ro loveka</string>
+    <string name="badge_friend_bronze_desc">Engetela vanghana ra wena ro sungula.</string>
+    <string name="badge_friend_silver_title">Mbyana ya ntumbuluko</string>
+    <string name="badge_friend_silver_desc">Engetela vanghana va khume.</string>
+    <string name="badge_friend_gold_title">Naledi ya vuchangani</string>
+    <string name="badge_friend_gold_desc">Engetela vanghana va khume na n’we.</string>
+    <string name="badge_friend_platinum_title">Xiphemu xa vaaki</string>
+    <string name="badge_friend_platinum_desc">Engetela vanghana va makume mabvu.</string>
+    
+    <!-- Streak Achievements -->
+    <string name="badge_streak_bronze_title">Ku sungula</string>
+    <string name="badge_streak_bronze_desc">Pfulela StudySync masiku manharhu lama landzelelaka.</string>
+    <string name="badge_streak_silver_title">Ntsumi wa vhiki</string>
+    <string name="badge_streak_silver_desc">Pfulela StudySync masiku ya xitsununu lama landzelelaka.</string>
+    <string name="badge_streak_gold_title">Ntsumi wa vhiki ro mbirhi</string>
+    <string name="badge_streak_gold_desc">Pfulela StudySync masiku ya khume na n’we lama landzelelaka.</string>
+    <string name="badge_streak_platinum_title">Nhloko ya mhalamhala</string>
+    <string name="badge_streak_platinum_desc">Pfulela StudySync masiku ya makume mabvu lama landzelelaka.</string>
+    
+    <!-- Resource Achievements -->
+    <string name="badge_resource_bronze_title">Mukhandziyi wa switirhisiwa</string>
+    <string name="badge_resource_bronze_desc">Avelana na switirhisiwa swa wena swo sungula.</string>
+    <string name="badge_resource_silver_title">Nkhandziyi wa switirhisiwa</string>
+    <string name="badge_resource_silver_desc">Avelana na switirhisiwa swa khume.</string>
+    <string name="badge_resource_gold_title">Mhandzi wa switirhisiwa</string>
+    <string name="badge_resource_gold_desc">Avelana na switirhisiwa swa khume na n’we.</string>
+    
+    <!-- Message Achievements -->
+    <string name="badge_message_bronze_title">Xitirhisi xa mahungu</string>
+    <string name="badge_message_bronze_desc">Rhumela mahungu ya khume.</string>
+    <string name="badge_message_silver_title">Vuxakaji xo tirhaka</string>
+    <string name="badge_message_silver_desc">Rhumela mahungu ya makume mabvu na n’we.</string>
+    <string name="badge_message_gold_title">Ntsumi wa mahungu</string>
+    <string name="badge_message_gold_desc">Rhumela mahungu ya makume mhlane.</string>
 </resources>

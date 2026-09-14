@@ -131,19 +131,63 @@
     <string name="gamification_streak_days">%1$d-day streak</string>
     <string name="gamification_badges">Badges</string>
     <string name="gamification_dashboard_cta">Tap to view badges, streak, and level</string>
+    <string name="gamification_tier_progress">Tier progress: %1$s</string>
+    <string name="gamification_achievements_unlocked">%1$d / %2$d achievements unlocked</string>
 
     <string name="badge_welcome_title">Welcome</string>
     <string name="badge_welcome_desc">You signed in and started using StudySync.</string>
-    <string name="badge_first_class_title">First class</string>
-    <string name="badge_first_class_desc">Create or join your first class.</string>
-    <string name="badge_first_group_title">Team player</string>
-    <string name="badge_first_group_desc">Create or join a study group.</string>
-    <string name="badge_connector_title">Connector</string>
-    <string name="badge_connector_desc">Add at least three friends.</string>
-    <string name="badge_scholar_title">Scholar</string>
-    <string name="badge_scholar_desc">Have five classes on your schedule.</string>
-    <string name="badge_streak3_title">On a roll</string>
-    <string name="badge_streak3_desc">Open StudySync three days in a row.</string>
-    <string name="badge_streak7_title">Week warrior</string>
-    <string name="badge_streak7_desc">Keep a seven-day streak.</string>
+    
+    <!-- Class Achievements -->
+    <string name="badge_class_bronze_title">Class Beginner</string>
+    <string name="badge_class_bronze_desc">Create or join your first class.</string>
+    <string name="badge_class_silver_title">Class Enthusiast</string>
+    <string name="badge_class_silver_desc">Create or join 5 classes.</string>
+    <string name="badge_class_gold_title">Class Master</string>
+    <string name="badge_class_gold_desc">Create or join 10 classes.</string>
+    <string name="badge_class_platinum_title">Class Legend</string>
+    <string name="badge_class_platinum_desc">Create or join 25 classes.</string>
+    
+    <!-- Group Achievements -->
+    <string name="badge_group_bronze_title">Group Starter</string>
+    <string name="badge_group_bronze_desc">Create or join your first study group.</string>
+    <string name="badge_group_silver_title">Group Builder</string>
+    <string name="badge_group_silver_desc">Create or join 3 study groups.</string>
+    <string name="badge_group_gold_title">Group Leader</string>
+    <string name="badge_group_gold_desc">Create or join 5 study groups.</string>
+    
+    <!-- Friend Achievements -->
+    <string name="badge_friend_bronze_title">Friendly Face</string>
+    <string name="badge_friend_bronze_desc">Add your first friend.</string>
+    <string name="badge_friend_silver_title">Social Butterfly</string>
+    <string name="badge_friend_silver_desc">Add 5 friends.</string>
+    <string name="badge_friend_gold_title">Network Star</string>
+    <string name="badge_friend_gold_desc">Add 10 friends.</string>
+    <string name="badge_friend_platinum_title">Community Icon</string>
+    <string name="badge_friend_platinum_desc">Add 25 friends.</string>
+    
+    <!-- Streak Achievements -->
+    <string name="badge_streak_bronze_title">Getting Started</string>
+    <string name="badge_streak_bronze_desc">Open StudySync 3 days in a row.</string>
+    <string name="badge_streak_silver_title">Week Warrior</string>
+    <string name="badge_streak_silver_desc">Open StudySync 7 days in a row.</string>
+    <string name="badge_streak_gold_title">Fortnight Champion</string>
+    <string name="badge_streak_gold_desc">Open StudySync 14 days in a row.</string>
+    <string name="badge_streak_platinum_title">Monthly Master</string>
+    <string name="badge_streak_platinum_desc">Open StudySync 30 days in a row.</string>
+    
+    <!-- Resource Achievements -->
+    <string name="badge_resource_bronze_title">Resource Sharer</string>
+    <string name="badge_resource_bronze_desc">Share your first resource.</string>
+    <string name="badge_resource_silver_title">Resource Contributor</string>
+    <string name="badge_resource_silver_desc">Share 5 resources.</string>
+    <string name="badge_resource_gold_title">Resource Expert</string>
+    <string name="badge_resource_gold_desc">Share 10 resources.</string>
+    
+    <!-- Message Achievements -->
+    <string name="badge_message_bronze_title">Conversation Starter</string>
+    <string name="badge_message_bronze_desc">Send 5 messages.</string>
+    <string name="badge_message_silver_title">Active Communicator</string>
+    <string name="badge_message_silver_desc">Send 25 messages.</string>
+    <string name="badge_message_gold_title">Chat Champion</string>
+    <string name="badge_message_gold_desc">Send 50 messages.</string>
 </resources>

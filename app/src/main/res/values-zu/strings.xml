@@ -124,19 +124,63 @@
     <string name="gamification_streak_days">Uchungechunge lwezinsuku ezingu-%1$d</string>
     <string name="gamification_badges">Amabheji</string>
     <string name="gamification_dashboard_cta">Thepha ukuze ubuke amabheji, uchungechunge, neleveli</string>
+    <string name="gamification_tier_progress">Inqubekela phambili ye-tier: %1$s</string>
+    <string name="gamification_achievements_unlocked">%1$d / %2$d izimpumezwiswe ezivuliwe</string>
 
     <string name="badge_welcome_title">Siyakwamukela</string>
     <string name="badge_welcome_desc">Ungene waqala ukusebenzisa i-StudySync.</string>
-    <string name="badge_first_class_title">Ikilasi lokuqala</string>
-    <string name="badge_first_class_desc">Dala noma ujoyine ikilasi lakho lokuqala.</string>
-    <string name="badge_first_group_title">Umdlali weqembu</string>
-    <string name="badge_first_group_desc">Dala noma ujoyine iqembu lokufunda.</string>
-    <string name="badge_connector_title">Isixhumanisi</string>
-    <string name="badge_connector_desc">Engeza okungenani abangane abathathu.</string>
-    <string name="badge_scholar_title">Isifundiswa</string>
-    <string name="badge_scholar_desc">Yiba namakilasi amahlanu kushejuli yakho.</string>
-    <string name="badge_streak3_title">Uyaqhubeka</string>
-    <string name="badge_streak3_desc">Vula i-StudySync izinsuku ezintathu zilandelana.</string>
-    <string name="badge_streak7_title">Iqhawe leviki</string>
-    <string name="badge_streak7_desc">Gcina uchungechunge lwezinsuku eziyisikhombisa.</string>
+    
+    <!-- Class Achievements -->
+    <string name="badge_class_bronze_title">Isiqalisi sekilasi</string>
+    <string name="badge_class_bronze_desc">Dala noma ujoyine ikilasi yakho yokuqala.</string>
+    <string name="badge_class_silver_title">Uthandi ikilasi</string>
+    <string name="badge_class_silver_desc">Dala noma ujoyine amakilasi ayisihlanu.</string>
+    <string name="badge_class_gold_title">Umholi wekilasi</string>
+    <string name="badge_class_gold_desc">Dala noma ujoyine amakilasi ayishumi.</string>
+    <string name="badge_class_platinum_title">Isigabade sekilasi</string>
+    <string name="badge_class_platinum_desc">Dala noma ujoyine amakilasi ayisishiyagalombili.</string>
+    
+    <!-- Group Achievements -->
+    <string name="badge_group_bronze_title">Isiqalisi seqembu</string>
+    <string name="badge_group_bronze_desc">Dala noma ujoyine iqembu lakho lokuqala lokufunda.</string>
+    <string name="badge_group_silver_title">Umbhali weqembu</string>
+    <string name="badge_group_silver_desc">Dala noma ujoyine amaqembu amathathu okufunda.</string>
+    <string name="badge_group_gold_title">Umholi weqembu</string>
+    <string name="badge_group_gold_desc">Dala noma ujoyine amaqembu ayisihlanu okufunda.</string>
+    
+    <!-- Friend Achievements -->
+    <string name="badge_friend_bronze_title">Umunye owangcwele</string>
+    <string name="badge_friend_bronze_desc">Engeza umngane wakho wokuqala.</string>
+    <string name="badge_friend_silver_title">Isihlalo esithandekayo</string>
+    <string name="badge_friend_silver_desc">Engeza abangane abahlanu.</string>
+    <string name="badge_friend_gold_title">Inkanyezi yethu</string>
+    <string name="badge_friend_gold_desc">Engeza abangane abayishumi.</string>
+    <string name="badge_friend_platinum_title">Isikhomba somphakathi</string>
+    <string name="badge_friend_platinum_desc">Engeza abangane abangamashumi amahlanu.</string>
+    
+    <!-- Streak Achievements -->
+    <string name="badge_streak_bronze_title">Ukuqala</string>
+    <string name="badge_streak_bronze_desc">Vula i-StudySync izinsuku ezintathu zilandelana.</string>
+    <string name="badge_streak_silver_title">Iqhawe leviki</string>
+    <string name="badge_streak_silver_desc">Vula i-StudySync izinsuku eziyisikhombisa zilandelana.</string>
+    <string name="badge_streak_gold_title">Iqhawe lezikuphela kwesonto</string>
+    <string name="badge_streak_gold_desc">Vula i-StudySync izinsuku ezinesishiyagalombili zilandelana.</string>
+    <string name="badge_streak_platinum_title">Umholi wenyanga</string>
+    <string name="badge_streak_platinum_desc">Vula i-StudySync izinsuku ezingu-30 zilandelana.</string>
+    
+    <!-- Resource Achievements -->
+    <string name="badge_resource_bronze_title">Umehlisi wemikhomo</string>
+    <string name="badge_resource_bronze_desc">Yabelana ngesi-sixhumanisi sakho sokuqala.</string>
+    <string name="badge_resource_silver_title">Umehlisi wezinsizakalo</string>
+    <string name="badge_resource_silver_desc">Yabelana ngezinsizakalo ezinhlanu.</string>
+    <string name="badge_resource_gold_title">Isazi semikhomo</string>
+    <string name="badge_resource_gold_desc">Yabelana ngezinsizakalo ezishumi.</string>
+    
+    <!-- Message Achievements -->
+    <string name="badge_message_bronze_title">Isiqalisi sokuxoxa</string>
+    <string name="badge_message_bronze_desc">Thumela imilayezo emihlanu.</string>
+    <string name="badge_message_silver_title">Umxoxi osebenzayo</string>
+    <string name="badge_message_silver_desc">Thumela imilayezo emashumi amabili nanhlanu.</string>
+    <string name="badge_message_gold_title">Iqhawe lokuxoxa</string>
+    <string name="badge_message_gold_desc">Thumela imilayezo amashumi amahlanu.</string>
 </resources>

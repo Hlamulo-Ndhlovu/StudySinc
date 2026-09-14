@@ -124,19 +124,63 @@
     <string name="gamification_streak_days">Letšatši tše %1$d tša go tšwela pele</string>
     <string name="gamification_badges">Dibetšhe</string>
     <string name="gamification_dashboard_cta">Tobetsa go bona dibetšhe, letšatši tša go tšwela pele, le maemo</string>
+    <string name="gamification_tier_progress">Tšwelopele ya tier: %1$s</string>
+    <string name="gamification_achievements_unlocked">%1$d / %2$d dikgato tše di fola</string>
 
     <string name="badge_welcome_title">Re a go amogela</string>
     <string name="badge_welcome_desc">O tsene wa thoma go šomiša StudySync.</string>
-    <string name="badge_first_class_title">Klase ya mathomo</string>
-    <string name="badge_first_class_desc">Hlama goba tsena klaseng ya gago ya mathomo.</string>
-    <string name="badge_first_group_title">Motšeakarolo wa sehlopha</string>
-    <string name="badge_first_group_desc">Hlama goba tsena sehlopheng sa thuto.</string>
-    <string name="badge_connector_title">Mokgokaganyi</string>
-    <string name="badge_connector_desc">Tsenya bonyenyane bagwera ba bararo.</string>
-    <string name="badge_scholar_title">Morutegi</string>
-    <string name="badge_scholar_desc">Ba le diklase tše hlano lenaneong la gago.</string>
-    <string name="badge_streak3_title">O a tšwela pele</string>
-    <string name="badge_streak3_desc">Bula StudySync matšatši a mararo ka go latelana.</string>
-    <string name="badge_streak7_title">Mohlabani wa beke</string>
-    <string name="badge_streak7_desc">Boloka matšatši a šupa a go tšwela pele.</string>
+    
+    <!-- Class Achievements -->
+    <string name="badge_class_bronze_title">Mošomi wa klasae</string>
+    <string name="badge_class_bronze_desc">Hlama goba tsena klaseng ya gago ya mathomo.</string>
+    <string name="badge_class_silver_title">Rataudi ya klasae</string>
+    <string name="badge_class_silver_desc">Hlama goba tsena diklaseng tše hlano.</string>
+    <string name="badge_class_gold_title">Moedi wa klasae</string>
+    <string name="badge_class_gold_desc">Hlama goba tsena diklaseng tše lesome.</string>
+    <string name="badge_class_platinum_title">Sefate sa klasae</string>
+    <string name="badge_class_platinum_desc">Hlama goba tsena diklaseng tše mashome a mabedi a hlano.</string>
+    
+    <!-- Group Achievements -->
+    <string name="badge_group_bronze_title">Mošomi wa sehlopha</string>
+    <string name="badge_group_bronze_desc">Hlama goba tsena sehlopheng sa gago sa mathomo sa thuto.</string>
+    <string name="badge_group_silver_title">Momi wa sehlopha</string>
+    <string name="badge_group_silver_desc">Hlama goba tsena dihlopheng tše tharo sa thuto.</string>
+    <string name="badge_group_gold_title">Moetapele wa sehlopha</string>
+    <string name="badge_group_gold_desc">Hlama goba tsena dihlopheng tše hlano sa thuto.</string>
+    
+    <!-- Friend Achievements -->
+    <string name="badge_friend_bronze_title">Seswantšho se se ratang</string>
+    <string name="badge_friend_bronze_desc">Tsenya moggwera wa gago wa mathomo.</string>
+    <string name="badge_friend_silver_title">Kgohla ya sefate</string>
+    <string name="badge_friend_silver_desc">Tsenya bagwera ba hlano.</string>
+    <string name="badge_friend_gold_title">Naledi ya kgwebo</string>
+    <string name="badge_friend_gold_desc">Tsenya bagwera ba lesome.</string>
+    <string name="badge_friend_platinum_title">Seswantšho sa setšhaba</string>
+    <string name="badge_friend_platinum_desc">Tsenya bagwera ba mashome a mabedi a hlano.</string>
+    
+    <!-- Streak Achievements -->
+    <string name="badge_streak_bronze_title">Go thoma</string>
+    <string name="badge_streak_bronze_desc">Bula StudySync matšatši a mararo ka go latelana.</string>
+    <string name="badge_streak_silver_title">Mohlabani wa beke</string>
+    <string name="badge_streak_silver_desc">Bula StudySync matšatši a šupa ka go latelana.</string>
+    <string name="badge_streak_gold_title">Mohlabani wa beke ya mabedi</string>
+    <string name="badge_streak_gold_desc">Bula StudySync matšatši a lesome a nne ka go latelana.</string>
+    <string name="badge_streak_platinum_title">Moetapele wa Kgwedi</string>
+    <string name="badge_streak_platinum_desc">Bula StudySync matšatši a masome a mararo ka go latelana.</string>
+    
+    <!-- Resource Achievements -->
+    <string name="badge_resource_bronze_title">Mabi a a abelanang</string>
+    <string name="badge_resource_bronze_desc">Abeleana ka setšhelo sa gago sa mathomo.</string>
+    <string name="badge_resource_silver_title">Mokgahabi wa setšhelo</string>
+    <string name="badge_resource_silver_desc">Abeleana ka ditšhelo tše hlano.</string>
+    <string name="badge_resource_gold_title">Rataedi ya setšhelo</string>
+    <string name="badge_resource_gold_desc">Abeleana ka ditšhelo tše lesome.</string>
+    
+    <!-- Message Achievements -->
+    <string name="badge_message_bronze_title">Mošomi wa polelo</string>
+    <string name="badge_message_bronze_desc">Romela melaetša e mehlano.</string>
+    <string name="badge_message_silver_title">Molemi wa o šomago</string>
+    <string name="badge_message_silver_desc">Romela melaetša a mashome a mabedi a hlano.</string>
+    <string name="badge_message_gold_title">Kgahla ya polelo</string>
+    <string name="badge_message_gold_desc">Romela melaetša a mashome a hlano.</string>
 </resources>
