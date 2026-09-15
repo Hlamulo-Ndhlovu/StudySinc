@@ -670,7 +670,7 @@ class FirebaseStudyRepository : StudyRepository {
     )
 
     private fun observeRecentMessages(): Flow<List<Message>> = callbackFlow {
-        val reg = db.collectionGroup(COL_MESSAGES)
+        val reg = db.collectionGroup("messages")
             .orderBy(FIELD_TIMESTAMP, Query.Direction.DESCENDING)
             .limit(5)
             .addSnapshotListener { snapshot, e ->
@@ -688,7 +688,7 @@ class FirebaseStudyRepository : StudyRepository {
     }
 
     private fun observeRecentResources(): Flow<List<Resource>> = callbackFlow {
-        val reg = db.collectionGroup(COL_RESOURCES)
+        val reg = db.collectionGroup("resources")
             .orderBy(FIELD_UPLOADED_AT, Query.Direction.DESCENDING)
             .limit(5)
             .addSnapshotListener { snapshot, e ->
