@@ -29,3 +29,15 @@ Dedicated group chat channels for course discussions, and announcements.
 Upload, download, and organize study guides, lecture slides, and PDF attachments via Firebase Storage.
 
 Multi-party virtual study sessions powered by low-latency Agora RTC channels.
+
+**Architecture & Tech Stack*
+Android Client Application
+Language: Kotlin
+UI Framework: Jetpack Compose (Declarative UI)
+Asynchronous Execution: Kotlin Coroutines & StateFlow / SharedFlow
+Networking & WebRTC: Retrofit2, OkHttp3, Agora RTC Android SDK
+
+**Backend & Cloud Infrastructure*
+Authentication: Firebase Auth (JWT / ID Tokens)
+Push Notifications: Firebase Cloud Messaging (FCM)
+DevOps: GitHub Actions CI/CD Pipeline
