@@ -50,4 +50,9 @@ JDK: Java Development Kit 17
 Firebase CLI: Installed via npm install -g firebase-tools
 Target Device: Android 8.0 (API level 26) or higher
 
+**Building & Running*
+Open the project in Android Studio.
+Sync Gradle files (File > Sync Project with Gradle Files).
+Select an emulator or physical Android device.
+Click Run to build and launch the application.
 
