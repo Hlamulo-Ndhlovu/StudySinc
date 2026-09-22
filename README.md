@@ -15,4 +15,13 @@
 10. Testing & Quality Assurance
 11. Team & License
 
-    
+>**About StudySinc**
+StudySinc is a centralized Android workspace designed to unify how students connect, communicate, share academic resources, and study together. Instead of switching between multiple disconnected applications for scheduling, chat, document storage, and video calling, StudySinc provides a single platform built tailored for peer-to-peer study collaboration.
+
+Developed by **Team Prokreative**, StudySinc combines real-time group interaction, low-latency virtual study rooms, secure document management, and peer presence.
+
+
+**Core Features**
+Schedule online classes, publish event topics, set timelines, and attach meeting URLs.
+
+Dedicated group chat channels for course discussions, and announcements.
