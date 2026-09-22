@@ -56,3 +56,7 @@ Sync Gradle files (File > Sync Project with Gradle Files).
 Select an emulator or physical Android device.
 Click Run to build and launch the application.
 
+**Team & License*
+Developer & Maintainer: Team Prokreative
+Application Package ID: com.prokreatives.studysync
+License: Distributed under the MIT License. This was created for Educational Purposes and part of the Rosebank International Assessment See LICENSE for details.
