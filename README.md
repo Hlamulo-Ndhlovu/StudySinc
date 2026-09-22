@@ -23,11 +23,8 @@ Developed by **Team Prokreative**, StudySinc combines real-time group interactio
 
 **Core Features**
 Schedule online classes, publish event topics, set timelines, and attach meeting URLs.
-
 Dedicated group chat channels for course discussions, and announcements.
-
 Upload, download, and organize study guides, lecture slides, and PDF attachments via Firebase Storage.
-
 Multi-party virtual study sessions powered by low-latency Agora RTC channels.
 
 **Architecture & Tech Stack*
