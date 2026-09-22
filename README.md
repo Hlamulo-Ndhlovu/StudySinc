@@ -33,11 +33,21 @@ Multi-party virtual study sessions powered by low-latency Agora RTC channels.
 **Architecture & Tech Stack*
 Android Client Application
 Language: Kotlin
-UI Framework: Jetpack Compose (Declarative UI)
-Asynchronous Execution: Kotlin Coroutines & StateFlow / SharedFlow
-Networking & WebRTC: Retrofit2, OkHttp3, Agora RTC Android SDK
+UI Framework: Jetpack Compose (Declarative UI).
+Asynchronous Execution: Kotlin Coroutines & StateFlow / SharedFlow.
+Networking & WebRTC: Retrofit2, OkHttp3, Agora RTC Android SDK.
 
 **Backend & Cloud Infrastructure*
-Authentication: Firebase Auth (JWT / ID Tokens)
-Push Notifications: Firebase Cloud Messaging (FCM)
-DevOps: GitHub Actions CI/CD Pipeline
+Authentication: Firebase Auth (JWT / ID Tokens).
+Push Notifications: Firebase Cloud Messaging (FCM).
+DevOps: GitHub Actions CI/CD Pipeline.
+
+
+
+**Prerequisites*
+Android Studio: Jellyfish (2024.1.1) or higher not sure I forgot which Android Studio did I choose.
+JDK: Java Development Kit 17
+Firebase CLI: Installed via npm install -g firebase-tools
+Target Device: Android 8.0 (API level 26) or higher
+
+
