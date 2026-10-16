@@ -4,16 +4,17 @@
 
 **> Table of Contents**
 1. About StudySinc
-2. Core Features
-3.  Architecture & Tech Stack
-4. Repository Structure
-5. Getting Started
-6. Prerequisites
-7. Firebase & Environment Setup
-8. Building & Running
-9. ~~CI/CD Pipeline~~~  *We sketched this for now*
-10. Testing & Quality Assurance
-11. Team & License
+2. Application Screenshot
+3. Core Features
+4.  Architecture & Tech Stack
+5. Repository Structure
+6. Getting Started
+7. Prerequisites
+8. Firebase & Environment Setup
+9. Building & Running
+10. ~~CI/CD Pipeline~~~  *We sketched this for now*
+11. Testing & Quality Assurance
+12. Team & License
 
 >**About StudySinc**
 StudySinc is a centralized Android workspace designed to unify how students connect, communicate, share academic resources, and study together. Instead of switching between multiple disconnected applications for scheduling, chat, document storage, and video calling, StudySinc provides a single platform built tailored for peer-to-peer study collaboration.
