@@ -88,7 +88,31 @@ data class Resource(
     val groupId: String? = null,
     /** When set, this file is a note attached to an online class (not a group resource). */
     val classId: String? = null,
-    val ownerUid: String = ""
+    val ownerUid: String = "",
+    /** Firebase Storage download URL when the file bytes were uploaded (blob storage). */
+    val downloadUrl: String = "",
+    val storagePath: String = ""
+)
+
+/** Local study task. [pendingSync] means Room has a change Firestore has not received yet. */
+data class StudyTask(
+    val id: String,
+    val title: String,
+    val subject: String,
+    val notes: String,
+    val dueAt: Long,
+    val priority: Int,
+    val done: Boolean,
+    val pendingSync: Boolean
+)
+
+/** One hit from the Open Library REST API (also cached in Room). */
+data class LibraryBook(
+    val key: String,
+    val title: String,
+    val authors: String,
+    val year: String,
+    val coverUrl: String
 )
 
 enum class AuthMode { LOGIN, REGISTER }

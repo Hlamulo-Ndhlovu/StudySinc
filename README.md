@@ -5,31 +5,22 @@
 **> Table of Contents**
 1. About StudySinc
 2. Application Screenshot
-3. What's New in This Release:
-4. Core Features
-5.  Architecture & Tech Stack
-6. Repository Structure
-7. Getting Started
-8. Prerequisites
-9. Firebase & Environment Setup
-10. Building & Running
-11. ~~CI/CD Pipeline~~~  *We sketched this for now*
-12. Testing & Quality Assurance
-13. Team & License
+3. Core Features
+4.  Architecture & Tech Stack
+5. Repository Structure
+6. Getting Started
+7. Prerequisites
+8. Firebase & Environment Setup
+9. Building & Running
+10. ~~CI/CD Pipeline~~~  *We sketched this for now*
+11. Testing & Quality Assurance
+12. Team & License
 
 >**About StudySinc**
 StudySinc is a centralized Android workspace designed to unify how students connect, communicate, share academic resources, and study together. Instead of switching between multiple disconnected applications for scheduling, chat, document storage, and video calling, StudySinc provides a single platform built tailored for peer-to-peer study collaboration.
 
 Developed by **Team Prokreative**, StudySinc combines real-time group interaction, low-latency virtual study rooms, secure document management, and peer presence.
 
-
-What's New in This Release:
-
-Emergency SOS: Quick-access SOS alert system for student safety during study sessions.
-Multi-Language Support: Access StudySinc in multiple languages with full localization.
-Enhanced Study Spaces: Faster live video co-working, improved group chat responsiveness, and smoother file sharing.
-Offline Access & Performance: Better local resource caching and low-data optimization.
-Bug fixes and stability improvements.
 
 **Core Features**
 Schedule online classes, publish event topics, set timelines, and attach meeting URLs.

@@ -132,4 +132,37 @@ object StudySyncNotifications {
             .build()
         postNotification(appContext, NOTIFY_ID_FRIEND_OFFSET + inboundDocId.hashCode(), notification)
     }
+
+    fun showGeneral(context: Context, title: String, body: String) {
+        val appContext = context.applicationContext
+        ensureChannels(appContext)
+        val intent = Intent(appContext, MainActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+        }
+        val requestCode = (System.currentTimeMillis() % Int.MAX_VALUE).toInt()
+        val pending = PendingIntent.getActivity(
+            appContext,
+            requestCode,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+        val notification = NotificationCompat.Builder(appContext, CHANNEL_GENERAL)
+            .setSmallIcon(R.drawable.ic_stat_studysync)
+            .setContentTitle(title)
+            .setContentText(body)
+            .setStyle(NotificationCompat.BigTextStyle().bigText(body))
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setContentIntent(pending)
+            .setAutoCancel(true)
+            .build()
+        postNotification(appContext, requestCode, notification)
+    }
+
+    /** Posts a high-priority reminder shortly after the call, so a demo can show a live alert. */
+    fun showLater(context: Context, title: String, body: String, delayMs: Long = 8_000L) {
+        val appContext = context.applicationContext
+        android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+            showGeneral(appContext, title, body)
+        }, delayMs)
+    }
 }

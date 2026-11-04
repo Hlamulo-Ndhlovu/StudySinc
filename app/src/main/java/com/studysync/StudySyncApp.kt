@@ -132,6 +132,8 @@ fun StudySyncApp(
         listOf(
             Screen.Dashboard,
             Screen.Progress,
+            Screen.Planner,
+            Screen.Library,
             Screen.Classes,
             Screen.Friends,
             Screen.Groups,
@@ -260,6 +262,8 @@ fun StudySyncApp(
 private fun drawerLabelRes(screen: Screen): Int = when (screen) {
     Screen.Dashboard -> R.string.nav_drawer_dashboard
     Screen.Progress -> R.string.nav_drawer_progress
+    Screen.Planner -> R.string.nav_drawer_planner
+    Screen.Library -> R.string.nav_drawer_library
     Screen.Groups -> R.string.nav_drawer_groups
     Screen.Classes -> R.string.nav_drawer_classes
     Screen.Friends -> R.string.nav_drawer_friends

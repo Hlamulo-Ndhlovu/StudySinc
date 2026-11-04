@@ -14,6 +14,8 @@ sealed class Screen(val route: String) {
     /** In-app + device notification preferences (dashboard bell). */
     object AppNotifications : Screen("appNotifications")
     object Profile : Screen("profile")
+    object Planner : Screen("planner")
+    object Library : Screen("library")
     object ClassDetail : Screen("classDetail/{classId}") {
         fun route(classId: String) = "classDetail/$classId"
     }

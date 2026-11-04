@@ -68,13 +68,16 @@ fun AuthScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "StudySync",
+            text = stringResource(R.string.app_name),
             style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.SemiBold
         )
         Spacer(modifier = Modifier.height(12.dp))
         StudySyncHeroBanner(
-            title = if (state.mode == AuthMode.LOGIN) "Welcome back" else "Create your space",
+            title = stringResource(
+                if (state.mode == AuthMode.LOGIN) R.string.auth_welcome_back
+                else R.string.auth_create_space
+            ),
             subtitle = stringResource(R.string.auth_hero_subtitle)
         )
         Text(
@@ -93,11 +96,11 @@ fun AuthScreen(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(14.dp)
         ) {
-            Text("Continue with Google")
+            Text(stringResource(R.string.auth_continue_google))
         }
 
         Spacer(modifier = Modifier.height(18.dp))
-        SectionLabel("Or email")
+        SectionLabel(stringResource(R.string.auth_or_email))
         Spacer(modifier = Modifier.height(4.dp))
 
         Card(
@@ -115,7 +118,7 @@ fun AuthScreen(
                 OutlinedTextField(
                     value = state.email,
                     onValueChange = onEmailChange,
-                    label = { Text("Email") },
+                    label = { Text(stringResource(R.string.auth_email)) },
                     modifier = Modifier.fillMaxWidth()
                 )
 
@@ -123,25 +126,25 @@ fun AuthScreen(
                     OutlinedTextField(
                         value = state.firstName,
                         onValueChange = onFirstNameChange,
-                        label = { Text("First name") },
+                        label = { Text(stringResource(R.string.auth_first_name)) },
                         modifier = Modifier.fillMaxWidth()
                     )
                     OutlinedTextField(
                         value = state.lastName,
                         onValueChange = onLastNameChange,
-                        label = { Text("Surname") },
+                        label = { Text(stringResource(R.string.auth_surname)) },
                         modifier = Modifier.fillMaxWidth()
                     )
                     OutlinedTextField(
                         value = state.phoneNumber,
                         onValueChange = onPhoneChange,
-                        label = { Text("Phone number") },
+                        label = { Text(stringResource(R.string.auth_phone)) },
                         modifier = Modifier.fillMaxWidth()
                     )
                     OutlinedTextField(
                         value = state.displayName,
                         onValueChange = onDisplayNameChange,
-                        label = { Text("Display name (optional)") },
+                        label = { Text(stringResource(R.string.auth_display_name_optional)) },
                         modifier = Modifier.fillMaxWidth()
                     )
                 }
@@ -149,7 +152,7 @@ fun AuthScreen(
                 OutlinedTextField(
                     value = state.password,
                     onValueChange = onPasswordChange,
-                    label = { Text("Password") },
+                    label = { Text(stringResource(R.string.auth_password)) },
                     visualTransformation = if (state.passwordVisible) {
                         VisualTransformation.None
                     } else {
@@ -158,12 +161,24 @@ fun AuthScreen(
                     trailingIcon = {
                         IconButton(onClick = onPasswordVisibilityToggle) {
                             Icon(
-                                imageVector = if (state.passwordVisible) Icons.Filled.VisibilityOff else Icons.Filled.Visibility,
-                                contentDescription = if (state.passwordVisible) "Hide password" else "Show password"
+                                imageVector = if (state.passwordVisible) {
+                                    Icons.Filled.VisibilityOff
+                                } else {
+                                    Icons.Filled.Visibility
+                                },
+                                contentDescription = stringResource(
+                                    if (state.passwordVisible) R.string.auth_hide_password
+                                    else R.string.auth_show_password
+                                )
                             )
                         }
                     },
                     modifier = Modifier.fillMaxWidth()
+                )
+                Text(
+                    text = stringResource(R.string.auth_password_encrypted_hint),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
                 if (state.mode == AuthMode.LOGIN) {
                     Row(
@@ -171,7 +186,7 @@ fun AuthScreen(
                         horizontalArrangement = Arrangement.End
                     ) {
                         TextButton(onClick = onForgotPassword, enabled = !state.isLoading) {
-                            Text("Forgot password?")
+                            Text(stringResource(R.string.auth_forgot_password))
                         }
                     }
                 }
@@ -179,7 +194,7 @@ fun AuthScreen(
                     OutlinedTextField(
                         value = state.confirmPassword,
                         onValueChange = onConfirmPasswordChange,
-                        label = { Text("Confirm password") },
+                        label = { Text(stringResource(R.string.auth_confirm_password)) },
                         visualTransformation = if (state.confirmPasswordVisible) {
                             VisualTransformation.None
                         } else {
@@ -193,11 +208,10 @@ fun AuthScreen(
                                     } else {
                                         Icons.Filled.Visibility
                                     },
-                                    contentDescription = if (state.confirmPasswordVisible) {
-                                        "Hide password"
-                                    } else {
-                                        "Show password"
-                                    }
+                                    contentDescription = stringResource(
+                                        if (state.confirmPasswordVisible) R.string.auth_hide_password
+                                        else R.string.auth_show_password
+                                    )
                                 )
                             }
                         },
@@ -237,12 +251,16 @@ fun AuthScreen(
         ) {
             if (state.isLoading) {
                 CircularProgressIndicator(
-                    modifier = Modifier
-                        .height(18.dp),
+                    modifier = Modifier.height(18.dp),
                     strokeWidth = 2.dp
                 )
             } else {
-                Text(text = if (state.mode == AuthMode.LOGIN) "Log in" else "Create account")
+                Text(
+                    text = stringResource(
+                        if (state.mode == AuthMode.LOGIN) R.string.auth_log_in
+                        else R.string.auth_create_account
+                    )
+                )
             }
         }
 
@@ -253,11 +271,12 @@ fun AuthScreen(
             shape = RoundedCornerShape(14.dp)
         ) {
             Text(
-                text = if (state.mode == AuthMode.LOGIN) "Need an account? Register"
-                else "Already have an account? Log in",
+                text = stringResource(
+                    if (state.mode == AuthMode.LOGIN) R.string.auth_need_account
+                    else R.string.auth_have_account
+                ),
                 textAlign = TextAlign.Center
             )
         }
-
     }
 }

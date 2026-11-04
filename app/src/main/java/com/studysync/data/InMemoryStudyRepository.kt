@@ -1,5 +1,6 @@
 package com.studysync.data
 
+import com.studysync.security.PasswordProtector
 import java.util.UUID
 import java.util.concurrent.ConcurrentHashMap
 import kotlin.random.Random
@@ -27,7 +28,9 @@ class InMemoryStudyRepository : StudyRepository {
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
     private val mutex = Mutex()
-    private val credentialStore = mutableMapOf<String, Pair<String, User>>()
+    private data class SealedCredential(val salt: String, val hash: String, val user: User)
+
+    private val credentialStore = mutableMapOf<String, SealedCredential>()
     private val random = Random(System.currentTimeMillis())
 
     private val responders = listOf(
@@ -158,11 +161,11 @@ class InMemoryStudyRepository : StudyRepository {
             mutex.withLock {
                 val record = credentialStore[email.lowercase()]
                     ?: return@withContext Result.failure(IllegalStateException("Account not found"))
-                if (record.first != password) {
+                if (!PasswordProtector.verify(email, password, record.salt, record.hash)) {
                     return@withContext Result.failure(IllegalStateException("Incorrect password"))
                 }
-                _currentUser.value = record.second
-                Result.success(record.second)
+                _currentUser.value = record.user
+                Result.success(record.user)
             }
         }
 
@@ -174,7 +177,9 @@ class InMemoryStudyRepository : StudyRepository {
     override suspend fun register(
         email: String,
         password: String,
-        displayName: String
+        displayName: String,
+        passwordHash: String,
+        passwordSalt: String
     ): Result<User> = withContext(Dispatchers.Default) {
         mutex.withLock {
             val normalized = email.lowercase()
@@ -186,7 +191,12 @@ class InMemoryStudyRepository : StudyRepository {
                 email = normalized,
                 displayName = displayName.ifBlank { normalized.substringBefore("@") }
             )
-            credentialStore[normalized] = password to user
+            val sealed = if (passwordHash.isNotBlank() && passwordSalt.isNotBlank()) {
+                PasswordProtector.SealedPassword(passwordSalt, passwordHash)
+            } else {
+                PasswordProtector.protect(email, password)
+            }
+            credentialStore[normalized] = SealedCredential(sealed.saltBase64, sealed.hashBase64, user)
             _currentUser.value = user
             Result.success(user)
         }
@@ -279,10 +289,9 @@ class InMemoryStudyRepository : StudyRepository {
                 avatarUrl = avatarUrl
             )
             _currentUser.value = updated
-            // keep credential store password the same, update user object
             val entry = credentialStore[updated.email]
             if (entry != null) {
-                credentialStore[updated.email] = entry.first to updated
+                credentialStore[updated.email] = entry.copy(user = updated)
             }
             Result.success(updated)
         }
@@ -510,19 +519,23 @@ class InMemoryStudyRepository : StudyRepository {
     override suspend fun uploadResource(
         groupId: String,
         name: String,
-        sizeBytes: Long
+        sizeBytes: Long,
+        fileBytes: ByteArray?,
+        contentType: String?
     ): Result<Resource> = withContext(Dispatchers.Default) {
         mutex.withLock {
             val owner = _currentUser.value ?: return@withContext Result.failure(IllegalStateException("Not authenticated"))
             val res = Resource(
                 id = UUID.randomUUID().toString(),
                 name = name.ifBlank { "Resource" },
-                sizeBytes = sizeBytes.coerceAtLeast(1_024L),
+                sizeBytes = fileBytes?.size?.toLong() ?: sizeBytes.coerceAtLeast(1_024L),
                 ownerName = owner.displayName.ifBlank { owner.email.substringBefore("@") },
                 uploadedAt = System.currentTimeMillis(),
                 groupId = groupId,
                 classId = null,
-                ownerUid = owner.id
+                ownerUid = owner.id,
+                downloadUrl = if (fileBytes != null) "memory://$groupId/$name" else "",
+                storagePath = contentType.orEmpty()
             )
             val current = _resources.value[groupId].orEmpty()
             _resources.value = _resources.value + (groupId to (current + res))

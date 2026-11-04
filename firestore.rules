@@ -10,6 +10,11 @@ service cloud.firestore {
         allow read, write: if request.auth != null && request.auth.uid == userId;
       }
 
+      // Offline study planner: Room is the local copy, this collection is the cloud copy.
+      match /tasks/{taskId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
       // Someone listed you as a friend by your registered email (writer is fromUid).
       match /friendInbound/{inviteId} {
         allow read, delete: if request.auth != null && request.auth.uid == userId;
