@@ -1,0 +1,69 @@
+How to run StudySync in Android Studio
+======================================
+
+OPEN THIS FOLDER
+----------------
+Downloads\StudySinc-main\StudySinc-main
+(the folder that contains settings.gradle — not the parent zip folder)
+
+RUN CONFIG (already added)
+--------------------------
+.idea/runConfigurations/app.xml is the “app” run configuration.
+Top toolbar should show:  app  |  StudySync Phone (or your device)
+
+1. File → Open → select StudySinc-main\StudySinc-main
+2. Trust the project if asked
+3. Wait for Gradle sync (Gradle JDK is set to JDK 17 in .idea/gradle.xml)
+4. In the device dropdown, pick StudySync Phone
+5. Click the green Run button (or Shift+F10)
+
+If sync fails: File → Settings → Build Tools → Gradle → Gradle JDK =
+  C:\Users\OG Loner\AppData\Local\jdks\jdk-17.0.20.1+1
+Then Sync again.
+
+EMULATOR
+--------
+AVD name: StudySync_Phone
+Device Manager → StudySync Phone → Play
+(Hypervisor driver AEHD must be installed — already set up on this PC)
+
+BUILD APK
+---------
+Build → Build Bundle(s) / APK(s) → Build APK(s)
+Output: app\build\outputs\apk\debug\app-debug.apk
+Also copied to: Downloads\StudySinc-APK\StudySync-debug.apk
+
+WHY OLD BUILDS FAILED
+---------------------
+Android Studio’s bundled JDK is too new for Gradle 8.7.
+This project must use JDK 17 for Gradle.
+
+BUILD A DEBUG APK (easiest, for your phone / demo)
+-------------------------------------------------
+1. Build → Build Bundle(s) / APK(s) → Build APK(s)
+2. When it finishes, click “locate” in the popup
+   OR open:
+   app\build\outputs\apk\debug\app-debug.apk
+
+A ready copy is also here:
+  C:\Users\OG Loner\Downloads\StudySinc-APK\StudySync-debug.apk
+
+Package id for this debug build:
+  com.prokreatives.studysync.dev
+
+BUILD A RELEASE / SIGNED APK (Play Store)
+-----------------------------------------
+You need a keystore.properties file in the project root (see
+keystore.properties.example). Without a valid .jks + passwords,
+Generate Signed Bundle/APK will fail or produce an unsigned APK.
+
+1. Copy keystore.properties.example → keystore.properties
+2. Fill storeFile, storePassword, keyAlias, keyPassword
+3. Build → Generate Signed Bundle / APK → APK → next
+4. Select your keystore and finish
+
+IF SYNC STILL FAILS
+-------------------
+- Invalidate Caches: File → Invalidate Caches → Invalidate and Restart
+- Confirm Gradle JDK is 17 (not “jbr-25” / Embedded JDK 21+)
+- Open the “Build” tool window and read the first red error line
