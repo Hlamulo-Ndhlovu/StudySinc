@@ -30,9 +30,21 @@ class AppSettings {
         prefs = p
         _useDarkTheme.value = p.getBoolean(KEY_DARK, false)
         _notificationsEnabled.value = p.getBoolean(KEY_NOTIFICATIONS, true)
-        _language.value = AppLanguage.fromTag(p.getString(KEY_LANGUAGE, AppLanguage.ENGLISH.tag))
+        val saved = AppLanguage.fromTag(p.getString(KEY_LANGUAGE, AppLanguage.ENGLISH.tag))
+        // Prefer our in-app choice. If the user never chose one, honour AppCompat's stored locale.
+        val appCompatTag = AppCompatDelegate.getApplicationLocales().toLanguageTags()
+            .substringBefore(',')
+            .ifBlank { null }
+        val fromAppCompat = AppLanguage.fromTag(appCompatTag)
+        val language = when {
+            p.contains(KEY_LANGUAGE) -> saved
+            appCompatTag == null -> AppLanguage.ENGLISH
+            else -> fromAppCompat
+        }
+        _language.value = language
         _streakDays.value = p.getInt(KEY_STREAK, 0)
-        applyLocales(_language.value)
+        p.edit().putString(KEY_LANGUAGE, language.tag).apply()
+        applyLocales(language)
     }
 
     fun setDarkTheme(enabled: Boolean) {
@@ -48,7 +60,8 @@ class AppSettings {
     fun setLanguage(language: AppLanguage) {
         if (_language.value == language) return
         _language.value = language
-        prefs?.edit()?.putString(KEY_LANGUAGE, language.tag)?.apply()
+        // commit so the choice survives even if the process is killed during locale apply
+        prefs?.edit()?.putString(KEY_LANGUAGE, language.tag)?.commit()
         applyLocales(language)
     }
 
@@ -71,8 +84,12 @@ class AppSettings {
     }
 
     private fun applyLocales(language: AppLanguage) {
-        val locales = LocaleListCompat.forLanguageTags(language.tag)
-        AppCompatDelegate.setApplicationLocales(locales)
+        val current = AppCompatDelegate.getApplicationLocales().toLanguageTags()
+            .substringBefore(',')
+            .substringBefore('-')
+        // Skip when already applied so setApplicationLocales does not recreate in a loop.
+        if (current.equals(language.tag, ignoreCase = true)) return
+        AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(language.tag))
     }
 
     companion object {

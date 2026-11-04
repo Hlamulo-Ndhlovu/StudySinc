@@ -27,7 +27,9 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.studysync.R
 import com.studysync.data.Resource
 
 @Composable
@@ -44,7 +46,7 @@ fun ResourcesScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Resources") },
+                title = { Text(stringResource(R.string.resource_title)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "Back")
@@ -87,7 +89,7 @@ fun ResourcesScreen(
                 if (state.resources.isEmpty()) {
                     item {
                         Text(
-                            text = "No resources yet. Upload to share question papers and files.",
+                            text = stringResource(R.string.resource_empty),
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier.padding(vertical = 12.dp)
@@ -116,6 +118,15 @@ private fun ResourceRow(resource: Resource, onDownload: () -> Unit) {
                 text = "${resource.ownerName} • ${(resource.sizeBytes / 1024)} KB",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Text(
+                text = if (resource.downloadUrl.startsWith("http") || resource.storagePath.isNotBlank()) {
+                    stringResource(R.string.resource_blob_stored)
+                } else {
+                    stringResource(R.string.resource_blob_missing)
+                },
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.primary
             )
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 IconButton(onClick = onDownload) {

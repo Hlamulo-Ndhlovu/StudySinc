@@ -10,6 +10,10 @@ import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.StorageMetadata
+import com.google.firebase.storage.ktx.storage
+import com.studysync.notifications.PushRegistration
+import com.studysync.security.PasswordProtector
 import com.studysync.data.ClassSession
 import com.studysync.data.DashboardSnapshot
 import com.studysync.data.Friend
@@ -68,6 +72,7 @@ class FirebaseStudyRepository : StudyRepository {
             if (firebaseUser == null) {
                 _currentUser.value = null
             } else {
+                registerDeviceForPush()
                 userProfileListener = db.collection(COL_USERS).document(firebaseUser.uid)
                     .addSnapshotListener { snap, e ->
                         if (e != null) {
@@ -93,6 +98,8 @@ class FirebaseStudyRepository : StudyRepository {
         runSuspendCatching {
             val result = auth.signInWithEmailAndPassword(email.trim(), password).await()
             val u = result.user ?: throw IllegalStateException("No user")
+            storePasswordSeal(email, password, u.uid)
+            registerDeviceForPush()
             loadUserProfile(u)
         }
     }
@@ -107,7 +114,9 @@ class FirebaseStudyRepository : StudyRepository {
     override suspend fun register(
         email: String,
         password: String,
-        displayName: String
+        displayName: String,
+        passwordHash: String,
+        passwordSalt: String
     ): Result<User> = withContext(Dispatchers.IO) {
         runSuspendCatching {
             val result = auth.createUserWithEmailAndPassword(email.trim(), password).await()
@@ -125,6 +134,11 @@ class FirebaseStudyRepository : StudyRepository {
                 phoneNumber = "",
                 avatarUrl = ""
             )
+            val sealed = if (passwordHash.isNotBlank() && passwordSalt.isNotBlank()) {
+                PasswordProtector.SealedPassword(passwordSalt, passwordHash)
+            } else {
+                PasswordProtector.protect(email, password)
+            }
             db.collection(COL_USERS).document(firebaseUser.uid).set(
                 mapOf(
                     "email" to user.email.trim().lowercase(),
@@ -133,9 +147,12 @@ class FirebaseStudyRepository : StudyRepository {
                     "lastName" to "",
                     "phoneNumber" to "",
                     "avatarUrl" to "",
+                    "passwordHash" to sealed.hashBase64,
+                    "passwordSalt" to sealed.saltBase64,
                     "createdAt" to FieldValue.serverTimestamp()
                 )
             ).await()
+            registerDeviceForPush()
             user
         }
     }
@@ -161,7 +178,36 @@ class FirebaseStudyRepository : StudyRepository {
                     )
                 ).await()
             }
+            registerDeviceForPush()
             loadUserProfile(firebaseUser)
+        }
+    }
+
+    /**
+     * Firestore stores only the PBKDF2 seal. If the seal is missing (older accounts) or no longer
+     * matches (password reset email), it is rewritten from the password Firebase Auth just accepted.
+     * The plaintext password is not written.
+     */
+    private suspend fun storePasswordSeal(email: String, password: String, uid: String) {
+        val snap = db.collection(COL_USERS).document(uid).get().await()
+        val hash = snap.getString("passwordHash")
+        val salt = snap.getString("passwordSalt")
+        val matches = !hash.isNullOrBlank() && !salt.isNullOrBlank() &&
+            PasswordProtector.verify(email, password, salt, hash)
+        if (matches) return
+        val sealed = PasswordProtector.protect(email, password)
+        db.collection(COL_USERS).document(uid).set(
+            mapOf(
+                "passwordHash" to sealed.hashBase64,
+                "passwordSalt" to sealed.saltBase64
+            ),
+            com.google.firebase.firestore.SetOptions.merge()
+        ).await()
+    }
+
+    private fun registerDeviceForPush() {
+        scope.launch {
+            runCatching { PushRegistration.saveCurrentToken() }
         }
     }
 
@@ -721,22 +767,43 @@ class FirebaseStudyRepository : StudyRepository {
     override suspend fun uploadResource(
         groupId: String,
         name: String,
-        sizeBytes: Long
+        sizeBytes: Long,
+        fileBytes: ByteArray?,
+        contentType: String?
     ): Result<Resource> = withContext(Dispatchers.IO) {
         val owner = auth.currentUser ?: return@withContext Result.failure(IllegalStateException("Not authenticated"))
+        val bytes = fileBytes ?: return@withContext Result.failure(
+            IllegalStateException("Choose a file. StudySync stores the file itself in cloud blob storage.")
+        )
+        if (bytes.size > MAX_BLOB_BYTES) {
+            return@withContext Result.failure(IllegalStateException("Files must be 8 MB or smaller."))
+        }
         val ownerName = _currentUser.value?.displayName?.ifBlank { null }
             ?: owner.email?.substringBefore("@") ?: "User"
         runSuspendCatching {
             val ref = db.collection(COL_GROUPS).document(groupId).collection(COL_RESOURCES).document()
+            val safeName = name.ifBlank { "Resource" }
+                .replace(Regex("[^A-Za-z0-9._-]"), "_")
+                .take(80)
+                .ifBlank { "file" }
+            val storagePath = "groups/$groupId/resources/${ref.id}/$safeName"
+            val metadata = StorageMetadata.Builder()
+                .setContentType(contentType ?: "application/octet-stream")
+                .build()
+            val storageRef = Firebase.storage.reference.child(storagePath)
+            storageRef.putBytes(bytes, metadata).await()
+            val downloadUrl = storageRef.downloadUrl.await().toString()
             val res = Resource(
                 id = ref.id,
                 name = name.ifBlank { "Resource" },
-                sizeBytes = sizeBytes.coerceAtLeast(1_024L),
+                sizeBytes = bytes.size.toLong(),
                 ownerName = ownerName,
                 uploadedAt = System.currentTimeMillis(),
                 groupId = groupId,
                 classId = null,
-                ownerUid = owner.uid
+                ownerUid = owner.uid,
+                downloadUrl = downloadUrl,
+                storagePath = storagePath
             )
             ref.set(
                 mapOf(
@@ -745,10 +812,13 @@ class FirebaseStudyRepository : StudyRepository {
                     "ownerName" to res.ownerName,
                     "ownerUid" to owner.uid,
                     FIELD_UPLOADED_AT to FieldValue.serverTimestamp(),
-                    "groupId" to groupId
+                    "groupId" to groupId,
+                    "downloadUrl" to downloadUrl,
+                    "storagePath" to storagePath,
+                    "contentType" to (contentType ?: "application/octet-stream")
                 )
             ).await()
-            res.copy(uploadedAt = System.currentTimeMillis())
+            res
         }
     }
 
@@ -840,6 +910,7 @@ class FirebaseStudyRepository : StudyRepository {
         private const val FIELD_TIMESTAMP = "timestamp"
         private const val FIELD_OWNER_UID = "ownerUid"
         private const val FIELD_UPLOADED_AT = "uploadedAt"
+        private const val MAX_BLOB_BYTES = 8 * 1024 * 1024
     }
 }
 
@@ -944,7 +1015,9 @@ private fun com.google.firebase.firestore.DocumentSnapshot.toResource(): Resourc
         uploadedAt = uploaded,
         groupId = resolvedGroupId,
         classId = resolvedClassId,
-        ownerUid = getString("ownerUid").orEmpty()
+        ownerUid = getString("ownerUid").orEmpty(),
+        downloadUrl = getString("downloadUrl").orEmpty(),
+        storagePath = getString("storagePath").orEmpty()
     )
 }
 

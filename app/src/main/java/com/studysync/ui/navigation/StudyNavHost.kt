@@ -53,8 +53,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignInStatusCodes
 import com.google.android.gms.common.api.ApiException
 import com.studysync.R
 import kotlinx.coroutines.launch
+import com.studysync.Graph
 import com.studysync.ui.call.CallScreen
 import com.studysync.ui.call.LiveKitRoomNames
+import com.studysync.ui.library.LibraryScreen
+import com.studysync.ui.library.LibraryViewModel
+import com.studysync.ui.planner.PlannerScreen
+import com.studysync.ui.planner.PlannerViewModel
 
 @Composable
 fun StudyNavHost(
@@ -140,6 +145,7 @@ fun StudyNavHost(
             val vm = viewModel<DashboardViewModel>(factory = DashboardViewModel.factory(repository, settings))
             val appNotificationsEnabled =
                 settings.notificationsEnabled.collectAsStateWithLifecycle(initialValue = true).value
+            val online = Graph.offline.online.collectAsStateWithLifecycle(initialValue = true).value
             DashboardScreen(
                 state = vm.state.collectAsStateWithLifecycle().value,
                 onOpenGroups = { navController.navigate(Screen.Groups.route) },
@@ -150,7 +156,10 @@ fun StudyNavHost(
                 onOpenAppNotifications = { navController.navigate(Screen.AppNotifications.route) },
                 onOpenProfile = { navController.navigate(Screen.Profile.route) },
                 onViewAllQuickActions = { navController.navigate(Screen.Chats.route) },
-                onOpenProgress = { navController.navigate(Screen.Progress.route) }
+                onOpenProgress = { navController.navigate(Screen.Progress.route) },
+                onOpenPlanner = { navController.navigate(Screen.Planner.route) },
+                onOpenLibrary = { navController.navigate(Screen.Library.route) },
+                offline = !online
             )
         }
 
@@ -279,6 +288,43 @@ fun StudyNavHost(
             )
         }
 
+        composable(Screen.Planner.route) {
+            val appContext = LocalContext.current.applicationContext
+            val vm = viewModel<PlannerViewModel>(
+                factory = PlannerViewModel.factory(appContext, Graph.offline, repository)
+            )
+            val plannerState = vm.state.collectAsStateWithLifecycle().value
+            PlannerScreen(
+                state = plannerState,
+                onBack = { navController.popBackStack() },
+                onSync = vm::syncNow,
+                onOpenDialog = { vm.setDialog(true) },
+                onDismissDialog = { vm.setDialog(false) },
+                onTitle = vm::onTitle,
+                onSubject = vm::onSubject,
+                onNotes = vm::onNotes,
+                onPriority = vm::onPriority,
+                onSave = vm::saveTask,
+                onDone = vm::setDone,
+                onDelete = vm::delete,
+                onRemind = vm::remind,
+                onClearMessage = vm::clearMessage
+            )
+        }
+
+        composable(Screen.Library.route) {
+            val vm = viewModel<LibraryViewModel>(
+                factory = LibraryViewModel.factory(Graph.library, Graph.offline)
+            )
+            val libraryState = vm.state.collectAsStateWithLifecycle().value
+            LibraryScreen(
+                state = libraryState,
+                onBack = { navController.popBackStack() },
+                onQuery = vm::onQuery,
+                onSearch = vm::search
+            )
+        }
+
         composable(Screen.Progress.route) {
             val snapshot by repository.observeDashboard()
                 .collectAsStateWithLifecycle(initialValue = DashboardSnapshot())
@@ -355,10 +401,11 @@ fun StudyNavHost(
         ) { backStackEntry ->
             val groupId = backStackEntry.arguments?.getString("groupId").orEmpty()
             val vm = viewModel<ResourcesViewModel>(factory = ResourcesViewModel.factory(groupId, repository))
+            val context = LocalContext.current
             ResourcesScreen(
                 state = vm.state.collectAsStateWithLifecycle().value,
-                onPickFile = vm::uploadFromPicker,
-                onDownload = vm::download,
+                onPickFile = { vm.uploadFromPicker(context, it) },
+                onDownload = { vm.download(context, it) },
                 onBack = { navController.popBackStack() }
             )
         }

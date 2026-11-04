@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.studysync.data.AuthMode
 import com.studysync.data.StudyRepository
+import com.studysync.security.PasswordProtector
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -113,24 +114,34 @@ class AuthViewModel(private val repository: StudyRepository) : ViewModel() {
 
         viewModelScope.launch {
             _state.update { it.copy(isLoading = true, error = null, infoMessage = null) }
+            val email = current.email.trim()
             val result = when (current.mode) {
-                AuthMode.LOGIN -> repository.login(current.email.trim(), current.password)
-                AuthMode.REGISTER -> repository.register(
-                    email = current.email.trim(),
-                    password = current.password,
-                    displayName = buildString {
-                        if (current.firstName.isNotBlank()) append(current.firstName.trim())
-                        if (current.lastName.isNotBlank()) {
-                            if (isNotEmpty()) append(" ")
-                            append(current.lastName.trim())
-                        }
-                        if (isEmpty()) append(current.displayName.ifBlank { current.email.substringBefore("@") })
-                    }
-                )
+                AuthMode.LOGIN -> repository.login(email, current.password)
+                AuthMode.REGISTER -> {
+                    val sealed = PasswordProtector.protect(email, current.password)
+                    repository.register(
+                        email = email,
+                        password = current.password,
+                        displayName = buildString {
+                            if (current.firstName.isNotBlank()) append(current.firstName.trim())
+                            if (current.lastName.isNotBlank()) {
+                                if (isNotEmpty()) append(" ")
+                                append(current.lastName.trim())
+                            }
+                            if (isEmpty()) append(current.displayName.ifBlank { email.substringBefore("@") })
+                        },
+                        passwordHash = sealed.hashBase64,
+                        passwordSalt = sealed.saltBase64
+                    )
+                }
             }
 
             result.fold(
-                onSuccess = { _state.update { it.copy(isLoading = false, error = null) } },
+                onSuccess = {
+                    _state.update {
+                        it.copy(isLoading = false, error = null, password = "", confirmPassword = "")
+                    }
+                },
                 onFailure = { throwable ->
                     _state.update { state ->
                         state.copy(isLoading = false, error = throwable.message)

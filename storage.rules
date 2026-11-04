@@ -1,0 +1,11 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Study files uploaded from a group. The Android client caps uploads at 8 MB.
+    match /groups/{groupId}/resources/{fileId}/{fileName} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null
+        && request.resource.size < 8 * 1024 * 1024;
+    }
+  }
+}

@@ -14,7 +14,9 @@ interface StudyRepository {
     suspend fun register(
         email: String,
         password: String,
-        displayName: String
+        displayName: String,
+        passwordHash: String = "",
+        passwordSalt: String = ""
     ): Result<User>
 
     /** Sign in with Google (Firebase Auth + Google ID token). */
@@ -86,7 +88,9 @@ interface StudyRepository {
     suspend fun uploadResource(
         groupId: String,
         name: String,
-        sizeBytes: Long
+        sizeBytes: Long,
+        fileBytes: ByteArray? = null,
+        contentType: String? = null
     ): Result<Resource>
 
     suspend fun downloadResource(
