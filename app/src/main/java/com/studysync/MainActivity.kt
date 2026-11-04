@@ -3,9 +3,11 @@ package com.studysync
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.LocalActivityResultRegistryOwner
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -14,10 +16,10 @@ import com.studysync.notifications.StudySyncNotifications
 import com.studysync.ui.theme.StudySyncTheme
 
 /**
- * AppCompatActivity is required so [androidx.appcompat.app.AppCompatDelegate.setApplicationLocales]
- * updates this activity's resources on Android 12 and below (and recreates cleanly on 13+).
+ * ComponentActivity keeps Compose Activity Result APIs working (Google Sign-In, file pickers).
+ * App locales are still applied with AppCompatDelegate in [AppSettings].
  */
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
 
     private var pendingInviteUri by mutableStateOf<Uri?>(null)
 
@@ -30,14 +32,16 @@ class MainActivity : AppCompatActivity() {
         setContent {
             val useDark = Graph.settings.useDarkTheme.collectAsStateWithLifecycle().value
             val language = Graph.settings.language.collectAsStateWithLifecycle().value
-            ProvideAppLanguage(language = language) {
-                StudySyncTheme(useDarkTheme = useDark) {
-                    StudySyncApp(
-                        repository = Graph.repository,
-                        settings = Graph.settings,
-                        pendingInviteUri = pendingInviteUri,
-                        onConsumePendingInvite = { pendingInviteUri = null }
-                    )
+            CompositionLocalProvider(LocalActivityResultRegistryOwner provides this) {
+                ProvideAppLanguage(language = language) {
+                    StudySyncTheme(useDarkTheme = useDark) {
+                        StudySyncApp(
+                            repository = Graph.repository,
+                            settings = Graph.settings,
+                            pendingInviteUri = pendingInviteUri,
+                            onConsumePendingInvite = { pendingInviteUri = null }
+                        )
+                    }
                 }
             }
         }

@@ -45,13 +45,16 @@ import com.studysync.ui.gamification.ProgressScreen
 import com.studysync.ui.groups.GroupsScreen
 import com.studysync.ui.groups.GroupsViewModel
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.activity.compose.LocalActivityResultRegistryOwner
 import androidx.compose.ui.platform.LocalContext
+import android.app.Activity
 import android.net.Uri
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.auth.api.signin.GoogleSignInStatusCodes
 import com.google.android.gms.common.api.ApiException
 import com.studysync.R
+import com.studysync.findActivity
 import kotlinx.coroutines.launch
 import com.studysync.Graph
 import com.studysync.ui.call.CallScreen
@@ -80,6 +83,9 @@ fun StudyNavHost(
         composable(Screen.Auth.route) {
             val vm = viewModel<AuthViewModel>(factory = AuthViewModel.factory(repository))
             val context = LocalContext.current
+            // Google Sign-In needs the real Activity, not a locale ConfigurationContext.
+            val activity = LocalContext.current.findActivity()
+                ?: LocalActivityResultRegistryOwner.current as? Activity
             val webClientId = context.getString(R.string.default_web_client_id)
             val googleLauncher = rememberLauncherForActivityResult(
                 contract = ActivityResultContracts.StartActivityForResult()
@@ -106,7 +112,7 @@ fun StudyNavHost(
                     vm.onGoogleSignInResult(null, msg)
                 }
             }
-            val onGoogleClick = remember(webClientId, context, vm) {
+            val onGoogleClick = remember(webClientId, context, activity, vm) {
                 {
                     if (!isConfiguredFirebaseWebClientId(webClientId)) {
                         vm.onGoogleSignInResult(
@@ -114,12 +120,17 @@ fun StudyNavHost(
                             context.getString(R.string.google_sign_in_web_client_missing)
                         )
                     } else {
-                        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                            .requestIdToken(webClientId.trim())
-                            .requestEmail()
-                            .build()
-                        val client = GoogleSignIn.getClient(context, gso)
-                        googleLauncher.launch(client.signInIntent)
+                        val host = activity
+                        if (host == null) {
+                            vm.onGoogleSignInResult(null, "Google Sign-In needs the app activity.")
+                        } else {
+                            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                                .requestIdToken(webClientId.trim())
+                                .requestEmail()
+                                .build()
+                            val client = GoogleSignIn.getClient(host, gso)
+                            googleLauncher.launch(client.signInIntent)
+                        }
                     }
                 }
             }

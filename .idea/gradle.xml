@@ -6,7 +6,8 @@
       <GradleProjectSettings>
         <option name="testRunner" value="CHOOSE_PER_TEST" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
+        <!-- JDK 17 is required for Gradle 8.7 / AGP 8.5. Do not use Studio embedded JDK 21+. -->
+        <option name="gradleJvm" value="C:\Users\OG Loner\AppData\Local\jdks\jdk-17.0.20.1+1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
