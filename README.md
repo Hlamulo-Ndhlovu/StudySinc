@@ -20,6 +20,8 @@
 StudySinc is a centralized Android workspace designed to unify how students connect, communicate, share academic resources, and study together. Instead of switching between multiple disconnected applications for scheduling, chat, document storage, and video calling, StudySinc provides a single platform built tailored for peer-to-peer study collaboration.
 
 Developed by **Team Prokreative**, StudySinc combines real-time group interaction, low-latency virtual study rooms, secure document management, and peer presence.
+<img width="1080" height="2340" alt="study" src="https://github.com/user-attachments/assets/aae31821-fa31-4078-8f90-ef0ca401adbc" />
+Figure 1.1 Login/Register UI
 
 
 **Core Features**
