@@ -23,6 +23,10 @@ Developed by **Team Prokreative**, StudySinc combines real-time group interactio
 <img width="1080" height="2340" alt="study" src="https://github.com/user-attachments/assets/aae31821-fa31-4078-8f90-ef0ca401adbc" />
 Figure 1.1 Login/Register UI
 
+<img width="1080" height="2340" alt="Study1" src="https://github.com/user-attachments/assets/dc570481-4f33-4aaa-9d03-c9c311497fbe" />
+Figure 1.2 How the Dashboard look like and the Menu
+
+
 
 **Core Features**
 Schedule online classes, publish event topics, set timelines, and attach meeting URLs.
