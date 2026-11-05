@@ -12,7 +12,7 @@
 7. Prerequisites
 8. Firebase & Environment Setup
 9. Building & Running
-10. ~~CI/CD Pipeline~~~  *We sketched this for now*
+10. CI/CD Pipeline 
 11. Testing & Quality Assurance
 12. Team & License
 
@@ -25,6 +25,11 @@ Figure 1.1 Login/Register UI
 
 <img width="1080" height="2340" alt="Study1" src="https://github.com/user-attachments/assets/dc570481-4f33-4aaa-9d03-c9c311497fbe" />
 Figure 1.2 How the Dashboard look like and the Menu
+
+
+<img width="1080" height="2340" alt="Study2" src="https://github.com/user-attachments/assets/4b146cf0-b4c1-43fd-b72c-c81eea5513c4" />
+Figure 1.3 Class UI were users can join meetings or Go Live
+
 
 
 
